@@ -10,12 +10,8 @@ class User(db.Model):
 
     __tablename__ = "users"
 
-    user_id = db.Column(db.Integer, 
-                        autoincrement=True,
-                        primary_key=True)
+    user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String)
-
-    recommendation_request = db.relationship('RecommendationRequest')
 
     def __repr__(self):
         """Show info about the user."""
@@ -28,38 +24,30 @@ class RecommendationRequest(db.Model):
 
     __tablename__ = "recommendation_requests"
 
-    rec_id = db.Column(db.Integer,
-                        autoincrement=True,
-                        primary_key=True)
+    rec_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     length = db.Column(db.Integer, nullable=False)
     location = db.Column(db.Text)
 
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     genre_id = db.Column(db.Integer, db.ForeignKey('genres.genre_id'))
 
-    user = db.relationship('User')
-    genre = db.relationship('Genre')
+    user = db.relationship('User', backref='recommendation_requests')
+    genre = db.relationship('Genre', backref='recommendation_requests')
 
     def __repr__(self):
         return f'<Recommendation rec_id={self.rec_id} user_id={self.user_id} genre_id={self.genre_id} length={self.length} location={self.location}>'
 
-
+# is this right?? for the relationship on line 32/5 with the id only
 class Genre(db.Model):
     """A genre."""
 
     __tablename__ = "genres"
 
-    genre_id = db.Column(db.Integer,
-                        autoincrement=True,
-                        primary_key=True)
-
-    genre = db.Column(db.String, )
-    rec_id = db.Column(db.Integer, db.ForeignKey('recommendation_requests.rec_id'))
-
-    recommendation_request = db.relationship('RecommendationRequest')
+    genre_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    genre_name = db.Column(db.String, nullable=False)
 
     def __repr__(self):
-        return f'<Genre genre_id={self.genre_id} genre={self.genre} rec_id={self.rec_id}>'
+        return f'<Genre genre_id={self.genre_id} genre_name={self.genre_name} rec_id={self.rec_id}>'
 
 
 # copied from ratings lab
