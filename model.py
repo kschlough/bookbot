@@ -1,4 +1,4 @@
-"""Models for book recommendations app Bookbot."""
+"""Models for book Bookbot recommendations app."""
 # createdb book_recs
 
 from flask_sqlalchemy import SQLAlchemy 
@@ -15,7 +15,7 @@ class User(db.Model):
                         primary_key=True)
     name = db.Column(db.String)
 
-    # recommendation_request = db.relationship('RecommendationRequest')
+    recommendation_request = db.relationship('RecommendationRequest')
 
     def __repr__(self):
         """Show info about the user."""
@@ -23,48 +23,48 @@ class User(db.Model):
         return f'<User user_id={self.user_id} name={self.name}>'
 
 
-# class RecommendationRequest(db.Model):
-#     """A recommendation request."""
+class RecommendationRequest(db.Model):
+    """A recommendation request."""
 
-#     __tablename__ = "recommendation_requests"
+    __tablename__ = "recommendation_requests"
 
-#     rec_id = db.Column(db.Integer,
-#                         autoincrement=True,
-#                         primary_key=True)
-#     length = db.Column(db.Integer, nullable=False)
-#     location = db.Column(db.Text)
+    rec_id = db.Column(db.Integer,
+                        autoincrement=True,
+                        primary_key=True)
+    length = db.Column(db.Integer, nullable=False)
+    location = db.Column(db.Text)
 
-#     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-#     genre_id = db.Column(db.Integer, db.ForeignKey('genres.genre_id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
+    genre_id = db.Column(db.Integer, db.ForeignKey('genres.genre_id'))
 
-#     user = db.relationship('User')
-#     genre = db.relationship('Genre')
+    user = db.relationship('User')
+    genre = db.relationship('Genre')
 
-#     def __repr__(self):
-#         return f'<Recommendation rec_id={self.rec_id} user_id={self.user_id} genre_id={genre_id} length={length} location={location}>'
+    def __repr__(self):
+        return f'<Recommendation rec_id={self.rec_id} user_id={self.user_id} genre_id={self.genre_id} length={self.length} location={self.location}>'
 
 
-# class Genre(db.Model):
-#     """A genre."""
+class Genre(db.Model):
+    """A genre."""
 
-#     __tablename__ = "genres"
+    __tablename__ = "genres"
 
-#     genre_id = db.Column(db.Integer,
-#                         autoincrement=True,
-#                         primary_key=True)
+    genre_id = db.Column(db.Integer,
+                        autoincrement=True,
+                        primary_key=True)
 
-#     genre = db.Column(db.String, )
-#     rec_id = db.Column(db.Integer, db.ForeignKey('recommendation_requests.rec_id'))
+    genre = db.Column(db.String, )
+    rec_id = db.Column(db.Integer, db.ForeignKey('recommendation_requests.rec_id'))
 
-#     recommendation_request = db.relationship('RecommendationRequest')
+    recommendation_request = db.relationship('RecommendationRequest')
 
-#     def __repr__(self):
-#         return f'<Genre genre_id={self.genre_id} genre={self.genre} rec_id={self.rec_id}>'
+    def __repr__(self):
+        return f'<Genre genre_id={self.genre_id} genre={self.genre} rec_id={self.rec_id}>'
 
 
 # copied from ratings lab
 
-def connect_to_db(flask_app, db_uri='postgresql:///ratings', echo=True):
+def connect_to_db(flask_app, db_uri='postgresql:///book_recs', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
     flask_app.config['SQLALCHEMY_ECHO'] = echo
     flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
