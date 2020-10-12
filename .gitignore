@@ -1,6 +1,7 @@
 env
 *.pyc
 secrets.sh
+secrets.py
 bookbot/ 
 
 # bookbot/ is ignored because that is a merge - saving in case I return to troubleshooting local environment issues

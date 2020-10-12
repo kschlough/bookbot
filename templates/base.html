@@ -1,17 +1,19 @@
 <!doctype html>
-<html>
+<html lang=en>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>
-      {% block title %}{% endblock %}
-    </title>
+    
+    <title>{% block title %}Bookbot{% endblock %}</title>
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+
 
     {% block head %}{% endblock %}
   </head>
   <body>
-    {% block body %}{% endblock %}
+    {% block content %}{% endblock %}
 
-    {% block after_body %}{% endblock %}
   </body>
 </html>

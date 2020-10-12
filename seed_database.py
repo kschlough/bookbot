@@ -15,6 +15,8 @@ model.connect_to_db(server.app)
 model.db.create_all()
 
 # load book recommendation data from JSON file
+with open('data/book_recs.json') as f:
+    book_recs_data = json.loads(f.read())
 
 
 # create recommendations, store in list

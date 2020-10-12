@@ -11,6 +11,8 @@ def create_user(name):
     return user
 
 # check this - do I pass genre in if it's drop-down and joined on the genre_id not name?
+# when passing in genre: genre=Genre(genre_name='name'))
+# have to pass in before genre: user=test_user
 def create_recommendation(length, location, genre):
     """Create and return a new recommendation."""
 

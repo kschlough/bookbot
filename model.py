@@ -25,7 +25,7 @@ class RecommendationRequest(db.Model):
     __tablename__ = "recommendation_requests"
 
     rec_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    length = db.Column(db.Integer, nullable=False)
+    length = db.Column(db.String, nullable=False)
     location = db.Column(db.Text)
 
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
