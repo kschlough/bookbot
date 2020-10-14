@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Request a recommendation from Bookbot</h2>
+
+            <!-- action="unsure" -->
+            <form method="GET">
+                <div class="form-group">
+                    <label for="username">Your Name</label>
+                    <input
+                    id="search-name"
+                    class="form-control"
+                    type="text"
+                    name="username"
+                    >
+                </div>
+
+                <div class="instructions">Please input your requested search criteria below and Bookbot will find your match!</div>
+
+                <div class="form-group">
+                    <label for="request-genre">Genre</label>
+                    <option></option>
+                    <select name="genres"
+                    id="search-genre"
+                    class="form-control">
+                    
+                    <option value ="fiction">Fiction</option>
+                    <option value ="non-fiction">Non-Fiction</option>
+                    <option value ="biography">Biography</option>
+                    <option value ="mystery">Mystery</option>
+                    <option value ="science fiction">Science Fiction</option>
+                    </select>
+        
+                </div>
+
+                <div class="form-group">
+                    <label for="request-setting">Setting</label>
+
+                    <input
+                    id="search-setting"
+                    class="form-control"
+                    type="text"
+                    name="request-setting"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="request-setting">Length</label>
+
+                    <input
+                    id="search-length"
+                    class="form-control"
+                    type="text"
+                    name="request-length"
+                    >
+                </div>
+                <div class="instructions">
+                <button type="submit">Submit</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
