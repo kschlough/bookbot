@@ -8,10 +8,6 @@ import crud
 import model
 import server
 
-from goodreads import client
-# create client instance to query Goodreads with python library
-gc = client.GoodreadsClient(KEY, SECRET)
-
 os.system('dropdb book_recs')
 os.system('createdb book_recs')
 
@@ -49,4 +45,3 @@ for book in book_recs_data:
 # create 10 users, each user makes 10 recommendations
 
 
-print(search.books("Red Notice", 1, KEY, "title"))
