@@ -26,7 +26,7 @@ class RecommendationRequest(db.Model):
 
     rec_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     length = db.Column(db.String, nullable=False)
-    location = db.Column(db.Text)
+    setting = db.Column(db.Text)
 
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     genre_id = db.Column(db.Integer, db.ForeignKey('genres.genre_id'))
@@ -35,7 +35,7 @@ class RecommendationRequest(db.Model):
     genre = db.relationship('Genre', backref='recommendation_requests')
 
     def __repr__(self):
-        return f'<Recommendation rec_id={self.rec_id} user_id={self.user_id} genre_id={self.genre_id} length={self.length} location={self.location}>'
+        return f'<Recommendation rec_id={self.rec_id} user_id={self.user_id} genre_id={self.genre_id} length={self.length} setting={self.setting}>'
 
 # is this right?? for the relationship on line 32/5 with the id only
 class Genre(db.Model):

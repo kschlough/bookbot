@@ -4,9 +4,10 @@ from flask import Flask, render_template
 import os
 from secrets import KEY, SECRET
 
-from goodreads import client
-# create client instance to query Goodreads with python library
-gc = client.GoodreadsClient(KEY, SECRET)
+# from goodreads import client
+# # create client instance to query Goodreads with python library
+# gc = client.GoodreadsClient(KEY, SECRET)
+# putting this in seed_db for now
 
 app = Flask(__name__)
 

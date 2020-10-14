@@ -13,10 +13,10 @@ def create_user(name):
 # check this - do I pass genre in if it's drop-down and joined on the genre_id not name?
 # when passing in genre: genre=Genre(genre_name='name'))
 # have to pass in before genre: user=test_user
-def create_recommendation(length, location, genre):
+def create_recommendation(length, setting, genre):
     """Create and return a new recommendation."""
 
-    recommendation = RecommendationRequest(length=length, location=location, genre=genre)
+    recommendation = RecommendationRequest(length=length, setting=setting, genre=genre)
 
     db.session.add(recommendation)
     db.session.commit(recommendation)
