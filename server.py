@@ -1,6 +1,6 @@
 """Server for Bookbot recommendations app."""
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from model import connect_to_db
 import os
 
@@ -21,6 +21,21 @@ def form_fillout():
     """Fill out the form to request a recommendation."""
     
     return render_template('form.html')
+
+@app.route('/recommendation-request', methods=['POST'])
+def new_recommendation():
+    """Submit a new recommendation request from the user."""
+    username = request.form['username']
+    genre = request.form['genre']
+    keyword = request.form['request-setting']
+    length = request.form['request-length']
+
+    return render_template('recommendation.html', 
+                            username = username,
+                            genre = genre,
+                            keyword = keyword,
+                            length = length)
+
 
 # @app.route('https://www.goodreads.com/search/index.xml'
 # print(search.books("Red Notice", 1, KEY, "title"))
