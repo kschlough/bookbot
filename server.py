@@ -7,10 +7,8 @@ import os
 import crud
 from jinja2 import StrictUndefined
 
-from secrets import KEY, SECRET
+from secrets import KEY
 from goodreads import client
-# # create client instance to query Goodreads with python library
-gc = client.GoodreadsClient(KEY, SECRET)
 
 app = Flask(__name__)
 app.jinja_env.undefined = StrictUndefined

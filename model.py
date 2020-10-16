@@ -37,7 +37,6 @@ class RecommendationRequest(db.Model):
     def __repr__(self):
         return f'<Recommendation rec_id={self.rec_id} user_id={self.user_id} genre_id={self.genre_id} length={self.length} setting={self.setting}>'
 
-# is this right?? for the relationship on line 32/5 with the id only
 class Genre(db.Model):
     """A genre."""
 
@@ -50,7 +49,6 @@ class Genre(db.Model):
         return f'<Genre genre_id={self.genre_id} genre_name={self.genre_name} rec_id={self.rec_id}>'
 
 
-# copied from ratings lab
 
 def connect_to_db(flask_app, db_uri='postgresql:///book_recs', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
