@@ -1,7 +1,8 @@
 """Server for Bookbot recommendations app."""
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify, redirect
 from model import connect_to_db
+import requests # python library - outgoing request
 import os
 
 import crud
@@ -25,17 +26,42 @@ def new_recommendation():
     """Submit a new recommendation request from the user."""
     username = request.form['username']
     genre = request.form['genre']
-    keyword = request.form['request-setting']
+    keyword = request.form['request-kw']
     length = request.form['request-length']
+
+    search_terms = {'q': f'{genre}+{keyword}'}
+
+    response = requests.get('https://www.googleapis.com/books/v1/volumes', params=search_terms)
+    results = response.json()
+    book = results['items'][0]
+    book_info = book['volumeInfo']
+    book_title = book_info['title']
+    # book_author = book_info['authors']
+    # book_genre = book_info['categories']
+    # page_count = book_info['pageCount']
+    # average_rating = book_info['averageRating']
+    description = book_info['description'] 
+    image_url = book_info['imageLinks']['thumbnail']
 
     return render_template('recommendation.html', 
                             username = username,
                             genre = genre,
                             keyword = keyword,
-                            length = length)
+                            length = length,
+                            book_title = book_title,
+                            # book_author = book_author,
+                            # book_genre = book_genre,
+                            # page_count = page_count,
+                            # average_rating = average_rating,
+                            description = description,
+                            image_url = image_url)
 
+@app.route('/api/recommendation')
+# @app.route('https://www.googleapis.com/books/v1/volumes?q=`${search_terms}`', methods=['GET'])
+# def google_books_return():
+#     return jsonify(response)
 
-# @app.route('https://www.goodreads.com/search/index.xml'
+# 
 # print(search.books("Red Notice", 1, KEY, "title"))
 
 
@@ -44,9 +70,12 @@ def new_recommendation():
 #     pass
 
 # this is where the jsonify'd response from goodreads will be
-# @app.route('api/')
-#     pass
+@app.route('/api/recommendation.json', methods = ['GET'])
+def recommendation_jsonify():
+    """Return a recommendation-info dictionary for the user's current request."""
 
+    username = request.args.get('username')
+    return jsonify(username)
 
 # crud: 
 # create_user(name)
