@@ -3,6 +3,7 @@
 from flask import Flask, render_template, request, jsonify, redirect
 from model import connect_to_db
 import requests # python library - outgoing request
+import random # for random choice of book from API response
 import os
 
 import crud
@@ -32,14 +33,26 @@ def new_recommendation():
 
     response = requests.get('https://www.googleapis.com/books/v1/volumes', params=search_terms)
     results = response.json()
-    book = results['items'][0]
+    num_results = int(results['totalItems'])
+    index = random.choice(range(0, num_results))
+    books = results['items'][index]
+    # book = results['items'][0]
     book_info = book['volumeInfo']
     book_title = book_info['title']
     # book_author = book_info['authors']
     # book_genre = book_info['categories']
     # page_count = book_info['pageCount']
     # average_rating = book_info['averageRating']
-    description = book_info['description'] 
+    if book_info['maturityRating'] == "MATURE":
+        maturity_rating = "Caution! This book may contain mature themes."
+    else:
+        maturity_rating = "This book is not rated mature."
+        
+    if book_info['description'] == 'false':
+        description = "This book does not have a description. Bookbot suggests you consider Googling it."
+    else:
+        description = book_info['description'] 
+
     image_url = book_info['imageLinks']['thumbnail']
 
     return render_template('recommendation.html', 
@@ -47,6 +60,7 @@ def new_recommendation():
                             genre = genre,
                             keyword = keyword,
                             book_title = book_title,
+                            maturity_rating = maturity_rating,
                             # book_author = book_author,
                             # book_genre = book_genre,
                             # page_count = page_count,

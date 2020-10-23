@@ -1,11 +1,10 @@
 "use strict";
 
 function returnHome() {
-    location.href = "/"
-    // needs to return to homepage, no web address right now while in localhost
-}
+    window.location.href = "/";
+};
 
-$("resubmit-button").on('click', returnHome);
+$("#resubmit-button").on('click', returnHome);
 
 
 
