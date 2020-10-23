@@ -12,18 +12,20 @@
     <div class="row">
         <div class="col">
             <h2>Hi {{ username.title() }}! Bookbot has generated your recommendation below.</h2>
-            <!-- for now testing with returning user's submission -->
             <p>Here is what you're looking for:</p>
             <p>Your requested genre is {{ genre.title() }}.</p>
             <p>You would like a book with the keyword "{{ keyword }}".</p>
-            <!-- not returning length for now -->
-            <!-- <p>You are looking for a {{ length }} book.</p> -->
 
             <h2>Bookbot recommends:</h2>
             <div id="book-recommendation">
                 <img src = {{ image_url }}>
                 <h3>{{ book_title }}</h3>
                 <p>Description: {{ description }}</p>
+            </div>
+            
+            <div id="return_home" class="instructions">
+                <button id="resubmit-button" type="submit">Submit another</button>
+
             </div>
 
         </div>

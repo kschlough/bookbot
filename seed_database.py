@@ -31,14 +31,8 @@ with open('data/book_recs.json') as f:
 books_in_db = []
 for book in book_recs_data:
     title, author, setting, genre = (book['title'], book['author'], book['setting'], book['genre'])
-    if length > 500:
-        length = 'long'
-    elif length < 500 and length > 200:
-        length = 'medium'
-    elif length < 200:
-        lengh = 'short'
 
-    db_book = crud.create_recommendation(length, setting, genre)
+    db_book = crud.create_recommendation(setting, genre)
     books_in_db.append(db_book)
 
 

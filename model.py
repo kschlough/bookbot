@@ -25,7 +25,6 @@ class RecommendationRequest(db.Model):
     __tablename__ = "recommendation_requests"
 
     rec_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    length = db.Column(db.String, nullable=False)
     setting = db.Column(db.Text)
 
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
@@ -35,7 +34,8 @@ class RecommendationRequest(db.Model):
     genre = db.relationship('Genre', backref='recommendation_requests')
 
     def __repr__(self):
-        return f'<Recommendation rec_id={self.rec_id} user_id={self.user_id} genre_id={self.genre_id} length={self.length} setting={self.setting}>'
+        return f'<Recommendation rec_id={self.rec_id} user_id={self.user_id} genre_id={self.genre_id} setting={self.setting}>'
+
 
 class Genre(db.Model):
     """A genre."""
@@ -47,7 +47,6 @@ class Genre(db.Model):
 
     def __repr__(self):
         return f'<Genre genre_id={self.genre_id} genre_name={self.genre_name} rec_id={self.rec_id}>'
-
 
 
 def connect_to_db(flask_app, db_uri='postgresql:///book_recs', echo=True):

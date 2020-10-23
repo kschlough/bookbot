@@ -1,18 +1,11 @@
 "use strict";
 
-// define the functions
-// all inside callback=initRec so it can be called
-function initRec() {
-    
-    const basicRec = () => {
-
-    }
-
-    // event handlers
-
-
-
+function returnHome() {
+    location.href = "/"
+    // needs to return to homepage, no web address right now while in localhost
 }
+
+$("resubmit-button").on('click', returnHome);
 
 
 

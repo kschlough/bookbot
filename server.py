@@ -27,7 +27,6 @@ def new_recommendation():
     username = request.form['username']
     genre = request.form['genre']
     keyword = request.form['request-kw']
-    length = request.form['request-length']
 
     search_terms = {'q': f'{genre}+{keyword}'}
 
@@ -47,7 +46,6 @@ def new_recommendation():
                             username = username,
                             genre = genre,
                             keyword = keyword,
-                            length = length,
                             book_title = book_title,
                             # book_author = book_author,
                             # book_genre = book_genre,
@@ -55,32 +53,6 @@ def new_recommendation():
                             # average_rating = average_rating,
                             description = description,
                             image_url = image_url)
-
-@app.route('/api/recommendation')
-# @app.route('https://www.googleapis.com/books/v1/volumes?q=`${search_terms}`', methods=['GET'])
-# def google_books_return():
-#     return jsonify(response)
-
-# 
-# print(search.books("Red Notice", 1, KEY, "title"))
-
-
-# this is where the recommendation will be returned to, and where the form will submit to
-# @app.route('/recommendation')
-#     pass
-
-# this is where the jsonify'd response from goodreads will be
-@app.route('/api/recommendation.json', methods = ['GET'])
-def recommendation_jsonify():
-    """Return a recommendation-info dictionary for the user's current request."""
-
-    username = request.args.get('username')
-    return jsonify(username)
-
-# crud: 
-# create_user(name)
-# create_recommendation(length, location, genre)
-# create_genre(genre_name)
 
 if __name__ == '__main__':
     connect_to_db(app)
