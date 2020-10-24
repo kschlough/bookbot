@@ -33,10 +33,10 @@ def new_recommendation():
 
     response = requests.get('https://www.googleapis.com/books/v1/volumes', params=search_terms)
     results = response.json()
-    num_results = int(results['totalItems'])
+    num_results = int(len(results['items']))
+    print(num_results)
     index = random.choice(range(0, num_results))
-    books = results['items'][index]
-    # book = results['items'][0]
+    book = results['items'][index]
     book_info = book['volumeInfo']
     book_title = book_info['title']
     # book_author = book_info['authors']
