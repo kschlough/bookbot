@@ -14,6 +14,7 @@ const invalidField = () => {
 };
 
 $("#search-name").on('invalid', invalidField);
+$('#search-kw').on('invalid', invalidField);
 
 
 
