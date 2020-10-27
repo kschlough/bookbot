@@ -1,7 +1,7 @@
 "use strict";
 
 // return to homepage
-const returnHome = () => {
+function returnHome = () => {
     window.location.href = "/";
 };
 
@@ -9,7 +9,7 @@ $("#resubmit-button").on('click', returnHome);
 
 
 // custom form fillout validation message
-const invalidField = () => {
+function invalidField = () => {
     alert("Please fill out this field");
 };
 
