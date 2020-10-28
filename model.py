@@ -1,4 +1,4 @@
-"""Models for book Bookbot recommendations app."""
+"""Models for Bookbot recommendations app."""
 # createdb book_recs
 
 from flask_sqlalchemy import SQLAlchemy 
