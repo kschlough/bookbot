@@ -38,4 +38,11 @@ for book in book_recs_data:
 
 # create 10 users, each user makes 10 recommendations
 
-
+#########################
+# logic:
+# when user hits submit on the form:
+    # save the user info & request info to the db using crud
+    # save a snapshot of the db at the given time?
+# on load of the json data displaying in the new page:
+    # save the json info displayed into the db
+    # save a snap of the db?

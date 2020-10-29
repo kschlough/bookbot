@@ -10,7 +10,6 @@ import crud
 from jinja2 import StrictUndefined
 
 from secrets import KEY
-from goodreads import client
 
 app = Flask(__name__)
 app.jinja_env.undefined = StrictUndefined

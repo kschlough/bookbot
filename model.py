@@ -49,6 +49,19 @@ class Genre(db.Model):
         return f'<Genre genre_id={self.genre_id} genre_name={self.genre_name} rec_id={self.rec_id}>'
 
 
+class RecommendationResponse(db.Model):
+    """A recommendation response."""
+
+    __tablename__ = "recommendation_responses"
+
+    resp_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    book_title = db.Column(db.String)
+    book_author = db.Column(db.String)
+    # verify genre: do I want to connect this? Or will that cause errors if API returns non-matching genre?
+    resp_genre = db.Column(db.String)
+
+
+
 def connect_to_db(flask_app, db_uri='postgresql:///book_recs', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
     flask_app.config['SQLALCHEMY_ECHO'] = echo
