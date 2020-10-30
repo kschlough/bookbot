@@ -47,10 +47,11 @@ def new_recommendation():
     else:
         maturity_rating = "This book is not rated mature."
         
-    if book_info['description'] == 'false':
-        description = "This book does not have a description. Bookbot suggests you consider Googling it."
+    if book_info['description'] != None:
+        description = book_info['description']
     else:
-        description = book_info['description'] 
+        description = "This book does not have a description. Bookbot suggests you consider Googling it."
+         
 
     image_url = book_info['imageLinks']['thumbnail']
 

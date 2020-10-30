@@ -7,3 +7,5 @@ api_test.py
 graveyard.py
 
 # bookbot/ is ignored because that is a merge - saving in case I return to troubleshooting local environment issues
+
+# fyi to self: test to see return json in browser using 'https://www.googleapis.com/books/v1/volumes?q={INPUT}&key=yourAPIKey'
