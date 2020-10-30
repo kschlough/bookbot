@@ -38,7 +38,6 @@ def new_recommendation():
     book = results['items'][index]
     book_info = book['volumeInfo']
     book_title = book_info['title']
-    # average_rating = book_info['averageRating']
     if book_info['maturityRating'] == "MATURE":
         maturity_rating = "Caution! This book may contain mature themes."
     else:
@@ -52,15 +51,15 @@ def new_recommendation():
 
     # sets the author(s) if available
     if 'authors' not in book_info:
-        authors = "This book does not have listed authors. Bookbot suggests you consider Googling it."
+        book_author = "This book does not have listed authors. Bookbot suggests you consider Googling it."
     else:
-        authors = book_info['authors']
+        book_author = book_info['authors']
 
     # sets the categories if available
     if 'categories' not in book_info:
-        categories = "Oops! This book doesn't appear to have specified genre(s). Bookbot suggests you consider Googling it to make sure this recommendation fits your desired genre."
+        book_genre = "Oops! This book doesn't appear to have specified genre(s). Bookbot suggests you consider Googling it to make sure this recommendation fits your desired genre."
     else:
-        categories = book_info['categories']
+        book_genre = book_info['categories']
     
     # sets the page count if available
     if 'pageCount' not in book_info:
