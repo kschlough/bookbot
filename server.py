@@ -34,8 +34,9 @@ def new_recommendation():
     results = response.json()
     num_results = int(len(results['items']))
     print(num_results)
-    index = random.choice(range(0, num_results))
-    book = results['items'][index]
+    # index = random.choice(range(0, num_results)) # changed for a moment to identify keyerror
+    # book = results['items'][index]
+    book = results['items'][0]
     book_info = book['volumeInfo']
     book_title = book_info['title']
     # book_author = book_info['authors']
@@ -47,7 +48,7 @@ def new_recommendation():
     else:
         maturity_rating = "This book is not rated mature."
         
-    if book_info['description'] != None:
+    if book_info['description']:
         description = book_info['description']
     else:
         description = "This book does not have a description. Bookbot suggests you consider Googling it."
