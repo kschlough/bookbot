@@ -53,13 +53,16 @@ def new_recommendation():
     if 'authors' not in book_info:
         book_author = "This book does not have listed authors. Bookbot suggests you consider Googling it."
     else:
-        book_author = book_info['authors']
+        book_author = book_info['authors'][0]
+        # add handling here for multiple - right now just [0]
 
     # sets the categories if available
     if 'categories' not in book_info:
         book_genre = "Oops! This book doesn't appear to have specified genre(s). Bookbot suggests you consider Googling it to make sure this recommendation fits your desired genre."
     else:
-        book_genre = book_info['categories']
+        book_genre = book_info['categories'][0]
+        # add handling here for multiple - right now just [0]
+
     
     # sets the page count if available
     if 'pageCount' not in book_info:
