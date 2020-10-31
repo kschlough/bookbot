@@ -28,7 +28,7 @@ def new_recommendation():
     genre = request.form['genre']
     keyword = request.form['request-kw']
 
-    search_terms = {'q': f'{genre}+{keyword}'}
+    search_terms = {'q': f'{genre}{keyword}'}
 
     response = requests.get('https://www.googleapis.com/books/v1/volumes', params=search_terms)
     results = response.json()

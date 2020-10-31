@@ -72,6 +72,7 @@ class RecommendationResponse(db.Model):
 
         return f'Recommendation response resp_id={self.resp_id} rec_id={self.rec_id} book_title={self.book_title} user_id={self.user_id}'
 
+
 def connect_to_db(flask_app, db_uri='postgresql:///book_recs', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
     flask_app.config['SQLALCHEMY_ECHO'] = echo

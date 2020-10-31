@@ -25,7 +25,8 @@ def create_genre(genre_name):
 def create_recommendation(setting, genre_id):
     """Create and return a new recommendation."""
 
-    recommendation = RecommendationRequest(setting=setting, genre_id=genre_id)
+    recommendation = RecommendationRequest(setting=setting, 
+                                            genre_id=genre_id)
 
     db.session.add(recommendation)
     db.session.commit(recommendation)
@@ -33,12 +34,15 @@ def create_recommendation(setting, genre_id):
     return recommendation
 
 
-def create_recommendation_response():
+def create_recommendation_response(book_title, book_author, user_id):
     """Create and return a new recommendation response."""
 
-    recommendation_response = RecommendationResponse()
+    recommendation_response = RecommendationResponse(book_title=book_title,
+                                                    book_author=book_author,
+                                                    user_id=user_id)
 
     return recommendation_response
+
 
 if __name__ == '__main__':
     from server import app
