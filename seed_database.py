@@ -27,14 +27,26 @@ model.db.create_all()
     # python library faker gives fake data, another option
     # pgm postgres tool to input data (or insert statements in SQL file)
 
+# seed the users table
+with open('data/users.json') as f:
+    bookbot_users = json.loads(f.read())
+
+users_in_db = []
+users = bookbot_users['items'][0]
+for user in users:
+    # use crud function to create user from each name in the json file
+    crud.create_user(user)
+
+
+# seed the genres table
 with open('data/genres.json') as f:
     rec_genres = json.loads(f.read())
 
 genres_in_db = []
 genres = rec_genres['items']
 for genre in genres:
-    # use crud function create_genre to create genre for each genre in json file
-    create_genre(genre)
+    # use crud function to create genre for each genre in json file
+    crud.create_genre(genre)
 
 # create recommendations, store in list
 # create fake books

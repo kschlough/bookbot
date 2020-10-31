@@ -1,0 +1,27 @@
+{
+    "kind": "users",
+    "source": "The 100 favourite fictional characters... as chosen by 100 literary luminaries",
+    "url": "https://www.independent.co.uk/arts-entertainment/books/features/the-100-favourite-fictional-characters-as-chosen-by-100-literary-luminaries-526971.html",
+    "items": [
+        {
+            "Philip Pirrip": "Great Expectations",
+            "Tintin et Milou": "Tintin",
+            "Elizabeth Bennett": "Pride and Prejudice",
+            "Sherlock Holmes": "Sherlock Holmes",
+            "Gandalf": "The Lord of the Rings",
+            "Frog and Toad": "Frog and Toad",
+            "Anne of Green Gables": "Anne of Green Gables",
+            "Lyra Silvertongue": "His Dark Materials",
+            "The Cat in the Hat": "The Cat in the Hat",
+            "Fermin Romero de Torres": "The Shadow of the Wind",
+            "Jane Eyre": "Jane Eyre",
+            "Paddington Bear": "Paddington Bear",
+            "Hamlet": "Hamlet",
+            "Moby Dick": "Moby Dick",
+            "Count Alexander Rostov": "A Gentleman in Moscow"
+
+        }
+    ],
+    "item_count": 15
+
+}
