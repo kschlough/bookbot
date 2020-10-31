@@ -55,11 +55,14 @@ class RecommendationResponse(db.Model):
     __tablename__ = "recommendation_responses"
 
     resp_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    rec_id = db.Column(db.Integer, db.ForeignKey('recommendation_requests.rec_id'))
     book_title = db.Column(db.String)
     book_author = db.Column(db.String)
-    # verify genre: do I want to connect this? Or will that cause errors if API returns non-matching genre?
-    resp_genre = db.Column(db.String)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
+    user_name = db.Column(db.String, db.ForeignKey('users.name'))
 
+    user = db.relationship('User', backref='recommendation_responses')
+    rec = db.relationship('RecommendationRequest', backref='recommendation_responses')
 
 
 def connect_to_db(flask_app, db_uri='postgresql:///book_recs', echo=True):
