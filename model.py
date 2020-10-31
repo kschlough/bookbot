@@ -19,6 +19,20 @@ class User(db.Model):
         return f'<User user_id={self.user_id} name={self.name}>'
 
 
+class Genre(db.Model):
+    """A genre."""
+
+    __tablename__ = "genres"
+
+    genre_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    genre_name = db.Column(db.String, nullable=False)
+
+    def __repr__(self):
+        """Show info about the genre."""
+
+        return f'<Genre genre_id={self.genre_id} genre_name={self.genre_name} rec_id={self.rec_id}>'
+
+
 class RecommendationRequest(db.Model):
     """A recommendation request."""
 
@@ -34,19 +48,9 @@ class RecommendationRequest(db.Model):
     genre = db.relationship('Genre', backref='recommendation_requests')
 
     def __repr__(self):
+        """Show info about the recommendation request."""
+
         return f'<Recommendation rec_id={self.rec_id} user_id={self.user_id} genre_id={self.genre_id} setting={self.setting}>'
-
-
-class Genre(db.Model):
-    """A genre."""
-
-    __tablename__ = "genres"
-
-    genre_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    genre_name = db.Column(db.String, nullable=False)
-
-    def __repr__(self):
-        return f'<Genre genre_id={self.genre_id} genre_name={self.genre_name} rec_id={self.rec_id}>'
 
 
 class RecommendationResponse(db.Model):
@@ -59,11 +63,14 @@ class RecommendationResponse(db.Model):
     book_title = db.Column(db.String)
     book_author = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-    user_name = db.Column(db.String, db.ForeignKey('users.name'))
 
     user = db.relationship('User', backref='recommendation_responses')
     rec = db.relationship('RecommendationRequest', backref='recommendation_responses')
 
+    def __repr__(self):
+        """Show info about the recommendation response."""
+
+        return f'Recommendation response resp_id={self.resp_id} rec_id={self.rec_id} book_title={self.book_title} user_id={self.user_id}'
 
 def connect_to_db(flask_app, db_uri='postgresql:///book_recs', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri

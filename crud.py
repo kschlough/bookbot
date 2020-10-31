@@ -1,4 +1,4 @@
-from model import db, User, RecommendationRequest, Genre
+from model import db, User, Genre, RecommendationRequest, RecommendationResponse
 
 def create_user(name):
     """Create and return a new user."""
@@ -11,17 +11,6 @@ def create_user(name):
     return user
 
 
-def create_recommendation(setting, genre):
-    """Create and return a new recommendation."""
-
-    recommendation = RecommendationRequest(setting=setting, genre=genre)
-
-    db.session.add(recommendation)
-    db.session.commit(recommendation)
-
-    return recommendation
-
-
 def create_genre(genre_name):
     """Create and return a new genre."""
 
@@ -31,6 +20,25 @@ def create_genre(genre_name):
     db.session.commit(genre_name)
 
     return genre_name
+
+
+def create_recommendation(setting, genre_id):
+    """Create and return a new recommendation."""
+
+    recommendation = RecommendationRequest(setting=setting, genre_id=genre_id)
+
+    db.session.add(recommendation)
+    db.session.commit(recommendation)
+
+    return recommendation
+
+
+def create_recommendation_response():
+    """Create and return a new recommendation response."""
+
+    recommendation_response = RecommendationResponse()
+
+    return recommendation_response
 
 if __name__ == '__main__':
     from server import app
