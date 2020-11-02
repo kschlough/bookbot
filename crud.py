@@ -22,11 +22,12 @@ def create_genre(genre_name):
     return genre_name
 
 
-def create_recommendation(setting, genre_id):
+def create_recommendation(setting, genre_id, user_id):
     """Create and return a new recommendation."""
 
     recommendation = RecommendationRequest(setting=setting, 
-                                            genre_id=genre_id)
+                                            genre_id=genre_id,
+                                            user_id=user_id)
 
     db.session.add(recommendation)
     db.session.commit(recommendation)
