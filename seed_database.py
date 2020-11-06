@@ -27,6 +27,10 @@ model.db.create_all()
     # python library faker gives fake data, another option
     # pgm postgres tool to input data (or insert statements in SQL file)
 
+# random keywords to pull from for seeding requests
+KEYWORDS = []
+
+
 # seed the users table
 with open('data/users.json') as f:
     bookbot_users = json.loads(f.read())
@@ -35,8 +39,8 @@ users_in_db = []
 users = bookbot_users['items'][0]
 for user in users:
     # use crud function to create user from each name in the json file
-    crud.create_user(user)
-
+    db_user = crud.create_user(user)
+    users_in_db.append(db_user)
 
 # seed the genres table
 with open('data/genres.json') as f:
@@ -46,7 +50,24 @@ genres_in_db = []
 genres = rec_genres['items']
 for genre in genres:
     # use crud function to create genre for each genre in json file
-    crud.create_genre(genre)
+    db_genre = crud.create_genre(genre)
+    genres_in_db.append(db_genre)
+
+# seed the recommendation requests table - 15 rec requests from 15 users
+for n in range(15):
+    # pick a random genre for the user's request
+    random_genre = choice(genres_in_db)
+    random_kw = choice(KEYWORDS)
+
+    crud.create_recommendation(random_kw, # kw id?, # user id?)
+
+
+# seed the recommendation responses table - 15 responses
+
+
+
+
+
 
 # create recommendations, store in list
 # create fake books
@@ -56,15 +77,3 @@ for genre in genres:
 
 #     db_book = crud.create_recommendation(setting, genre)
 #     books_in_db.append(db_book)
-
-
-# create 10 users, each user makes 10 recommendations
-
-#########################
-# logic:
-# when user hits submit on the form:
-    # save the user info & request info to the db using crud
-    # save a snapshot of the db at the given time?
-# on load of the json data displaying in the new page:
-    # save the json info displayed into the db
-    # save a snap of the db?
