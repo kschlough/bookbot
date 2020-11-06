@@ -1,4 +1,4 @@
-from model import db, User, Genre, RecommendationRequest, RecommendationResponse
+from model import connect_to_db, db, User, Genre, RecommendationRequest, RecommendationResponse
 
 def create_user(name):
     """Create and return a new user."""
@@ -17,7 +17,7 @@ def create_genre(genre_name):
     genre_name = Genre(genre_name=genre_name)
 
     db.session.add(genre_name)
-    db.session.commit(genre_name)
+    db.session.commit()
 
     return genre_name
 

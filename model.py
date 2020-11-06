@@ -30,7 +30,7 @@ class Genre(db.Model):
     def __repr__(self):
         """Show info about the genre."""
 
-        return f'<Genre genre_id={self.genre_id} genre_name={self.genre_name} rec_id={self.rec_id}>'
+        return f'<Genre genre_id={self.genre_id} genre_name={self.genre_name}'
 
 
 class RecommendationRequest(db.Model):
