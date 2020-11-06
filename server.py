@@ -92,6 +92,10 @@ def new_recommendation():
                             description = description,
                             image_url = image_url)
 
+@app.route('/recent-requests')
+def show_recents():
+    return render_template('recents.html')
+
 if __name__ == '__main__':
     connect_to_db(app)
     app.run(host='0.0.0.0', debug=True)
