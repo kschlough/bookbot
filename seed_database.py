@@ -79,9 +79,11 @@ for user in users_in_db:
     random_kw = choice(KEYWORDS) # ex: "moscow"
 
     # pick a random user to assign the request to
-    
+    user_name = User.query.filter(User.name == user).first(); # ex: "Philip Pirrip"
+    user_id = user_name.user_id
 
-    crud.create_recommendation(setting=random_kw, genre_id=random_genre_id, user_id=)
+    # crud.create_recommendation(setting=random_kw, genre_id=random_genre_id, user_id=)
+    crud.create_recommendation(random_kw, random_genre_id, user_id)
 
 
 # seed the recommendation responses table - 15 responses
