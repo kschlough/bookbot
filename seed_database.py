@@ -28,7 +28,21 @@ model.db.create_all()
     # pgm postgres tool to input data (or insert statements in SQL file)
 
 # random keywords to pull from for seeding requests
-KEYWORDS = []
+KEYWORDS = ["moscow",  
+           "amos tversky", 
+           "roman empire",
+           "titanic",
+           "foreign policy",
+           "canada",
+           "political science",
+           "san francisco",
+           "computer science",
+           "artificial intelligence",
+           "chicago",
+           "ballet",
+           "japan",
+           "constitutional law",
+           "linguistics"]
 
 
 # seed the users table
