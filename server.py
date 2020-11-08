@@ -30,6 +30,19 @@ def new_recommendation():
 
     search_terms = {'q': f'{genre}{keyword}'}
 
+    # trying to add crud functions:
+    # add user:
+    db_user = crud.create_user(username)
+    # get user id:
+    user_name = User.query.filter(User.name == user).first(); # ex: "Philip Pirrip"
+    user_id = user_name.user_id
+    # find genre id:
+    request_genre = Genre.query.filter(Genre.genre_name == random_genre).first() # ex: "<Genre genre_id=3 genre_name=Art"
+    genre_id = request_genre.genre_id
+    # submit rec request:
+    crud.create_recommendation(keyword, genre_id, user_id)
+
+
     response = requests.get('https://www.googleapis.com/books/v1/volumes', params=search_terms)
     results = response.json()
     num_results = int(len(results['items']))

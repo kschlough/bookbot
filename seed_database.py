@@ -16,17 +16,6 @@ model.connect_to_db(server.app)
 # have to access db through model
 model.db.create_all()
 
-# load book recommendation data from JSON file
-# with open('data/book_recs.json') as f:
-#     book_recs_data = json.loads(f.read())
-
-    # this is just what you seed the database with
-    # hardcode if needed - can be easier to demo with hardcoded data
-    # api connection - probably has json data, see what they give back & write python that takes it & puts in db
-    # can also have a SQL file that inserts data
-    # python library faker gives fake data, another option
-    # pgm postgres tool to input data (or insert statements in SQL file)
-
 # random keywords to pull from for seeding requests
 KEYWORDS = ["moscow",  
            "amos tversky", 
@@ -56,6 +45,7 @@ for user in users:
     db_user = crud.create_user(user)
     users_in_db.append(db_user)
 
+
 # seed the genres table
 with open('data/genres.json') as f:
     rec_genres = json.loads(f.read())
@@ -66,6 +56,7 @@ for genre in genres:
     # use crud function to create genre for each genre in json file
     db_genre = crud.create_genre(genre)
     genres_in_db.append(db_genre)
+
 
 # seed the recommendation requests table - 15 rec requests from 15 users
 # instead of n in range 15: for each user in the users_in_db list
@@ -80,7 +71,7 @@ for user in users_in_db:
 
     # pick a random user to assign the request to
     user_name = User.query.filter(User.name == user).first(); # ex: "Philip Pirrip"
-    user_id = user_name.user_id
+    user_id = user_name.user_id # ex: 1
 
     # crud.create_recommendation(setting=random_kw, genre_id=random_genre_id, user_id=)
     crud.create_recommendation(random_kw, random_genre_id, user_id)
