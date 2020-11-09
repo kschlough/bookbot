@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template, request, jsonify, redirect
 from model import connect_to_db
+# import the specifics Genre etc here
 import requests # python library - outgoing request
 import random # for random choice of book from API response
 import os
@@ -28,7 +29,9 @@ def new_recommendation():
     genre = request.form['genre']
     keyword = request.form['request-kw']
 
-    search_terms = {'q': f'{genre}{keyword}'}
+    search_terms = {'q': f'{genre}+{keyword}'}
+    # changed from {genre}{keyword} to adding + as API requested
+
 
     # trying to add crud functions:
     # add user:
@@ -41,6 +44,8 @@ def new_recommendation():
     genre_id = request_genre.genre_id
     # submit rec request:
     crud.create_recommendation(keyword, genre_id, user_id)
+
+    # commit to db
 
 
     response = requests.get('https://www.googleapis.com/books/v1/volumes', params=search_terms)

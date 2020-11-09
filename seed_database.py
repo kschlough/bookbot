@@ -6,6 +6,7 @@ from random import choice, randint
 
 import crud
 import model
+from model import User, Genre, RecommendationRequest, RecommendationResponse
 import server
 
 os.system('dropdb book_recs')
