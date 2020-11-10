@@ -42,7 +42,11 @@ def create_recommendation_response(book_title, book_author, user_id):
                                                     book_author=book_author,
                                                     user_id=user_id)
 
+    db.session.add(recommendation_response)
+    db.session.commit()
+        
     return recommendation_response
+    
 
 
 if __name__ == '__main__':

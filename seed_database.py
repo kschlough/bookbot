@@ -76,6 +76,7 @@ for user in users_in_db:
 
 
 # seed the recommendation responses table - 15 responses
+# for rec in recommendation_reqs_in_db:
 
 
 
