@@ -61,6 +61,7 @@ for genre in genres:
 
 # seed the recommendation requests table - 15 rec requests from 15 users
 # instead of n in range 15: for each user in the users_in_db list
+recommendation_reqs_in_db = []
 for user in users_in_db:
     # pick a random genre for the user's request
     random_genre = choice(genres_in_db) 
@@ -70,10 +71,13 @@ for user in users_in_db:
     random_kw = choice(KEYWORDS) 
 
     # assign to user.user_id - gives each user a recommendation
-    crud.create_recommendation(random_kw, random_genre_id, user.user_id)
+    rec_request = crud.create_recommendation(random_kw, random_genre_id, user.user_id)
+    recommendation_reqs_in_db.append(rec_request)
 
 
 # seed the recommendation responses table - 15 responses
+
+
 
 
 
