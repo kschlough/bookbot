@@ -30,7 +30,7 @@ def create_recommendation(setting, genre_id, user_id):
                                             user_id=user_id)
 
     db.session.add(recommendation)
-    db.session.commit(recommendation)
+    db.session.commit()
 
     return recommendation
 

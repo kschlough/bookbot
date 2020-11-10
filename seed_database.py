@@ -63,19 +63,14 @@ for genre in genres:
 # instead of n in range 15: for each user in the users_in_db list
 for user in users_in_db:
     # pick a random genre for the user's request
-    random_genre = choice(genres_in_db) # ex: "Art"
-    request_genre = Genre.query.filter(Genre.genre_name == random_genre).first() # ex: "<Genre genre_id=3 genre_name=Art"
-    random_genre_id = request_genre.genre_id # ex: 3
+    random_genre = choice(genres_in_db) 
+    random_genre_id = random_genre.genre_id 
 
     # pick a random kw for the user's request from list 'KEYWORDS'
-    random_kw = choice(KEYWORDS) # ex: "moscow"
+    random_kw = choice(KEYWORDS) 
 
-    # pick a random user to assign the request to
-    user_name = User.query.filter(User.name == user).first(); # ex: "Philip Pirrip"
-    user_id = user_name.user_id # ex: 1
-
-    # crud.create_recommendation(setting=random_kw, genre_id=random_genre_id, user_id=)
-    crud.create_recommendation(random_kw, random_genre_id, user_id)
+    # assign to user.user_id - gives each user a recommendation
+    crud.create_recommendation(random_kw, random_genre_id, user.user_id)
 
 
 # seed the recommendation responses table - 15 responses
