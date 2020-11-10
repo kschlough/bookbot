@@ -74,9 +74,43 @@ for user in users_in_db:
     rec_request = crud.create_recommendation(random_kw, random_genre_id, user.user_id)
     recommendation_reqs_in_db.append(rec_request)
 
+    # get the response in the same loop, all necessary info is available
+    # search terms
+    search_terms = {'q': f'{random_genre.genre_name}+{random_kw}'}
 
+    response = requests.get('https://www.googleapis.com/books/v1/volumes', params=search_terms)
+    results = response.json()
+    num_results = int(len(results['items']))
+    print(num_results)
+    index = random.choice(range(0, num_results)) # changed for a moment to identify keyerror
+    book = results['items'][index]
+    book_info = book['volumeInfo']
+    book_title = book_info['title']
+
+    # sets the author(s) if available
+    if 'authors' not in book_info:
+        book_author = "This book does not have listed authors. Bookbot suggests you consider Googling it."
+    else:
+        book_author = book_info['authors'][0]
+
+    # sets the categories if available
+    ############ add handling here for category to match form/genre input
+    if 'categories' not in book_info:
+        book_genre = "Oops! This book doesn't appear to have specified genre(s). Bookbot suggests you consider Googling it to make sure this recommendation fits your desired genre."
+    else:
+        book_genre = book_info['categories'][0]
+
+
+
+####################################
+# changed to above doing in one loop - commenting out below for now
 # seed the recommendation responses table - 15 responses
 # for rec in recommendation_reqs_in_db:
+#     genre_id = rec.genre_id
+#     kw = rec.setting
+
+#     # crud.create_recommendation_response(#title, author, user_id)
+#     crud.create_recommendation_response(rec.user_id)
 
 
 

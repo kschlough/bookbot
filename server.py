@@ -43,9 +43,11 @@ def new_recommendation():
     request_genre = Genre.query.filter(Genre.genre_name == random_genre).first() # ex: "<Genre genre_id=3 genre_name=Art"
     genre_id = request_genre.genre_id
     # submit rec request:
-    crud.create_recommendation(keyword, genre_id, user_id)
+    rec_request = crud.create_recommendation(keyword, genre_id, user_id)
 
     # commit to db
+    db.session.add(rec_request)
+    db.session.commit()
 
 
     response = requests.get('https://www.googleapis.com/books/v1/volumes', params=search_terms)
@@ -75,6 +77,7 @@ def new_recommendation():
         # add handling here for multiple - right now just [0]
 
     # sets the categories if available
+    ############ add handling here for category to match form/genre input
     if 'categories' not in book_info:
         book_genre = "Oops! This book doesn't appear to have specified genre(s). Bookbot suggests you consider Googling it to make sure this recommendation fits your desired genre."
     else:
