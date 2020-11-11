@@ -49,7 +49,6 @@ def new_recommendation():
     db.session.add(rec_request)
     db.session.commit()
 
-
     response = requests.get('https://www.googleapis.com/books/v1/volumes', params=search_terms)
     results = response.json()
     num_results = int(len(results['items']))
@@ -81,8 +80,10 @@ def new_recommendation():
     if 'categories' not in book_info:
         book_genre = "Oops! This book doesn't appear to have specified genre(s). Bookbot suggests you consider Googling it to make sure this recommendation fits your desired genre."
     else:
+        while book_info['categories'][0] != genre:
+            # get another random book
         book_genre = book_info['categories'][0]
-        # add handling here for multiple - right now just [0]
+        
 
     
     # sets the page count if available

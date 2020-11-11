@@ -82,7 +82,7 @@ for user in users_in_db:
     results = response.json()
     num_results = int(len(results['items']))
     print(num_results)
-    index = random.choice(range(0, num_results)) # changed for a moment to identify keyerror
+    index = random.choice(range(0, num_results)) 
     book = results['items'][index]
     book_info = book['volumeInfo']
     book_title = book_info['title']
@@ -95,10 +95,10 @@ for user in users_in_db:
 
     # sets the categories if available
     ############ add handling here for category to match form/genre input
-    if 'categories' not in book_info:
-        book_genre = "Oops! This book doesn't appear to have specified genre(s). Bookbot suggests you consider Googling it to make sure this recommendation fits your desired genre."
-    else:
-        book_genre = book_info['categories'][0]
+    # if 'categories' not in book_info:
+    #     book_genre = "Oops! This book doesn't appear to have specified genre(s). Bookbot suggests you consider Googling it to make sure this recommendation fits your desired genre."
+    # else:
+    #     book_genre = book_info['categories'][0]
 
 
 
