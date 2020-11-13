@@ -9,6 +9,7 @@ import random
 import crud
 import model
 from model import User, Genre, RecommendationRequest, RecommendationResponse
+from model import db, connect_to_db
 import server
 
 os.system('dropdb book_recs')
@@ -48,6 +49,9 @@ for user in users:
     db_user = crud.create_user(user)
     users_in_db.append(db_user)
 
+    db.session.add(db_user)
+    db.session.commit()
+
 
 # seed the genres table
 with open('data/genres.json') as f:
@@ -59,6 +63,9 @@ for genre in genres:
     # use crud function to create genre for each genre in json file
     db_genre = crud.create_genre(genre)
     genres_in_db.append(db_genre)
+
+    db.session.add(db_genre)
+    db.session.commit()
 
 
 # seed the recommendation requests table - 15 rec requests from 15 users
@@ -76,6 +83,9 @@ for user in users_in_db:
     # assign to user.user_id - gives each user a recommendation
     rec_request = crud.create_recommendation(random_kw, random_genre_id, user.user_id)
     recommendation_reqs_in_db.append(rec_request)
+
+    db.session.add(rec_request)
+    db.session.commit()
 
     # get the response in the same loop, all necessary info is available
     # search terms
@@ -95,6 +105,15 @@ for user in users_in_db:
         book_author = "This book does not have listed authors. Bookbot suggests you consider Googling it."
     else:
         book_author = book_info['authors'][0]
+
+    # get use id from username
+    user = User.query.filter(User.name == user.name).first() 
+
+    rec_response = crud.create_recommendation_response(book_title, book_author, user.user_id)
+    recommendation_responses_in_db.append(rec_response)
+
+    db.session.add(rec_response)
+    db.session.commit()
 
     ############ add handling here later for category to match form/genre input
 

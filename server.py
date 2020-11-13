@@ -47,11 +47,11 @@ def new_recommendation():
     # changed from {genre}{keyword} to adding + as API requested
 
 
-    # trying to add crud functions:
+    # add crud function for user's request:
     # add user:
     db_user = crud.create_user(username)
     # get user id:
-    user_name = User.query.filter(User.name == db_user.name).first(); 
+    user_name = User.query.filter(User.name == db_user.name).first() 
     user_id = user_name.user_id
     # find genre id:
     request_genre = Genre.query.filter(Genre.genre_name == genre).first() 
@@ -78,20 +78,17 @@ def new_recommendation():
     book_info = book['volumeInfo']
     book_title = book_info['title']
 
-
     # sets maturity
     if book_info['maturityRating'] == "MATURE":
         maturity_rating = "Caution! This book may contain mature themes."
     else:
-        maturity_rating = "This book is not rated mature."
-        
+        maturity_rating = "This book is not rated mature."      
 
     # sets the description if available
     if 'description' not in book_info:
         description = "This book does not have a description. Bookbot suggests you consider Googling it."
     else:
         description = book_info['description']
-
 
     # sets the author(s) if available
     if 'authors' not in book_info:
@@ -100,14 +97,12 @@ def new_recommendation():
         book_author = book_info['authors'][0]
         # add handling here for multiple - right now just [0]
 
-
     # sets the categories if available (it should be bc has to match line 58, but this is extra caution)
     # added handling line 58 for category to match form/genre input
     if 'categories' not in book_info:
         book_genre = "Oops! This book doesn't appear to have specified genre(s). Bookbot suggests you consider Googling it to make sure this recommendation fits your desired genre."
     else:
-        book_genre = book_info['categories'][0]
-        
+        book_genre = book_info['categories'][0] 
 
     # sets the page count if available
     if 'pageCount' not in book_info:
@@ -119,8 +114,7 @@ def new_recommendation():
     if 'averageRating' not in book_info:
         average_rating = "This book does not have an average rating."
     else:
-        average_rating = book_info['averageRating']
-         
+        average_rating = book_info['averageRating']    
 
     image_url = book_info['imageLinks']['thumbnail']
 
