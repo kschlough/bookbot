@@ -3,6 +3,7 @@
 import os
 import json
 from random import choice, randint
+import requests
 
 import crud
 import model
@@ -109,18 +110,3 @@ for user in users_in_db:
 #     # crud.create_recommendation_response(#title, author, user_id)
 #     crud.create_recommendation_response(rec.user_id)
 
-
-
-
-
-
-
-
-# create recommendations, store in list
-# create fake books
-# books_in_db = []
-# for book in book_recs_data:
-#     title, author, setting, genre = (book['title'], book['author'], book['setting'], book['genre'])
-
-#     db_book = crud.create_recommendation(setting, genre)
-#     books_in_db.append(db_book)
