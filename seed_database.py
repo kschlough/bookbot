@@ -4,6 +4,7 @@ import os
 import json
 from random import choice, randint
 import requests
+import random
 
 import crud
 import model
