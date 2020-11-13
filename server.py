@@ -1,7 +1,7 @@
 """Server for Bookbot recommendations app."""
 
 from flask import Flask, render_template, request, jsonify, redirect
-from model import connect_to_db
+from model import connect_to_db, db
 from model import User, Genre, RecommendationRequest, RecommendationResponse
 import requests # python library - outgoing request
 import random # for random choice of book from API response
