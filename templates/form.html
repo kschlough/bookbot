@@ -30,8 +30,10 @@
                     required
                     >
                     
-                    <!-- add loop here over genres in db -->
                     <option value="" disabled="disabled">Please select an option</option>
+                    <!-- add loop here over genres in db -->
+                    {% for genre in {{ genres.json }} %} 
+                        {{ genres here }}
                     <option value="adventure">Adventure</option>
                     <option value ="fiction">Fiction</option>
                     <option value ="non-fiction">Non-Fiction</option>
@@ -39,6 +41,7 @@
                     <option value ="mystery">Mystery</option>
                     <option value ="science fiction">Science Fiction</option>
                     <option value="juvenile fiction">Children's Fiction</option>
+                    {% endfor %}
                     </select>
         
                 </div>

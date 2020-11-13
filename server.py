@@ -6,6 +6,7 @@ from model import User, Genre, RecommendationRequest, RecommendationResponse
 import requests # python library - outgoing request
 import random # for random choice of book from API response
 import os
+import json
 
 import crud
 from jinja2 import StrictUndefined
@@ -21,6 +22,12 @@ app.jinja_env.undefined = StrictUndefined
 def form_fillout():
     """Fill out the form to request a recommendation."""
     
+    # parse through the genres.json and put into a list
+    genres_list = []
+
+
+
+
     return render_template('form.html')
 
 
@@ -39,10 +46,10 @@ def new_recommendation():
     # add user:
     db_user = crud.create_user(username)
     # get user id:
-    user_name = User.query.filter(User.name == user).first(); # ex: "Philip Pirrip"
+    user_name = User.query.filter(User.name == db_user.name).first(); 
     user_id = user_name.user_id
     # find genre id:
-    request_genre = Genre.query.filter(Genre.genre_name == random_genre).first() # ex: "<Genre genre_id=3 genre_name=Art"
+    request_genre = Genre.query.filter(Genre.genre_name == genre).first() 
     genre_id = request_genre.genre_id
     # submit rec request:
     rec_request = crud.create_recommendation(keyword, genre_id, user_id)
