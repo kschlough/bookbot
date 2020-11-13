@@ -39,7 +39,7 @@ KEYWORDS = ["moscow",
 
 # seed the users table
 with open('data/users.json') as f:
-    bookbot_users = json.loads(f.read())
+    bookbot_users = json.load(f)
 
 users_in_db = []
 users = bookbot_users['items'][0]
@@ -51,7 +51,7 @@ for user in users:
 
 # seed the genres table
 with open('data/genres.json') as f:
-    rec_genres = json.loads(f.read())
+    rec_genres = json.load(f)
 
 genres_in_db = []
 genres = rec_genres['items']

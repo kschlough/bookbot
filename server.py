@@ -23,12 +23,17 @@ def form_fillout():
     """Fill out the form to request a recommendation."""
     
     # parse through the genres.json and put into a list
+    with open('data/genres.json') as f:
+        rec_genres = json.load(f)
+
     genres_list = []
+    genres = rec_genres['items']
+    for genre in genres:
+        genres_list.append(genre)
 
 
-
-
-    return render_template('form.html')
+    return render_template('form.html',
+                            genres_list = genres_list)
 
 
 @app.route('/recommendation-request', methods=['POST'])
