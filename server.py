@@ -2,7 +2,7 @@
 
 from flask import Flask, render_template, request, jsonify, redirect
 from model import connect_to_db
-# import the specifics Genre etc here
+from model import User, Genre, RecommendationRequest, RecommendationResponse
 import requests # python library - outgoing request
 import random # for random choice of book from API response
 import os
@@ -15,12 +15,14 @@ from secrets import KEY
 app = Flask(__name__)
 app.jinja_env.undefined = StrictUndefined
 
+
 # this is the homepage, for now it will have the form
 @app.route('/')
 def form_fillout():
     """Fill out the form to request a recommendation."""
     
     return render_template('form.html')
+
 
 @app.route('/recommendation-request', methods=['POST'])
 def new_recommendation():
@@ -44,29 +46,40 @@ def new_recommendation():
     genre_id = request_genre.genre_id
     # submit rec request:
     rec_request = crud.create_recommendation(keyword, genre_id, user_id)
-
     # commit to db
     db.session.add(rec_request)
     db.session.commit()
 
+
     response = requests.get('https://www.googleapis.com/books/v1/volumes', params=search_terms)
     results = response.json()
     num_results = int(len(results['items']))
-    print(num_results)
-    index = random.choice(range(0, num_results)) # changed for a moment to identify keyerror
+
+    # while loop until genre matches user's selected genre
+    index = random.choice(range(0, num_results)) 
+    while results['items'][index]['volumeInfo']['categories'][0] != genre:
+        # get another random book
+        index = random.choice(range(0, num_results)) 
+
+    # out of the loop with a match:
     book = results['items'][index]
     book_info = book['volumeInfo']
     book_title = book_info['title']
+
+
+    # sets maturity
     if book_info['maturityRating'] == "MATURE":
         maturity_rating = "Caution! This book may contain mature themes."
     else:
         maturity_rating = "This book is not rated mature."
         
+
     # sets the description if available
     if 'description' not in book_info:
         description = "This book does not have a description. Bookbot suggests you consider Googling it."
     else:
         description = book_info['description']
+
 
     # sets the author(s) if available
     if 'authors' not in book_info:
@@ -75,17 +88,15 @@ def new_recommendation():
         book_author = book_info['authors'][0]
         # add handling here for multiple - right now just [0]
 
-    # sets the categories if available
-    ############ add handling here for category to match form/genre input
+
+    # sets the categories if available (it should be bc has to match line 58, but this is extra caution)
+    # added handling line 58 for category to match form/genre input
     if 'categories' not in book_info:
         book_genre = "Oops! This book doesn't appear to have specified genre(s). Bookbot suggests you consider Googling it to make sure this recommendation fits your desired genre."
     else:
-        while book_info['categories'][0] != genre:
-            # get another random book
         book_genre = book_info['categories'][0]
         
 
-    
     # sets the page count if available
     if 'pageCount' not in book_info:
         page_count = "This book does not have a specified page count. Bookbot suggests you consider listening to the audiobook if you are unsure your attention span will be up to par."
@@ -114,9 +125,11 @@ def new_recommendation():
                             description = description,
                             image_url = image_url)
 
+
 @app.route('/recent-requests')
 def show_recents():
     return render_template('recents.html')
+
 
 if __name__ == '__main__':
     connect_to_db(app)

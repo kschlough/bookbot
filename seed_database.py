@@ -62,6 +62,7 @@ for genre in genres:
 # seed the recommendation requests table - 15 rec requests from 15 users
 # instead of n in range 15: for each user in the users_in_db list
 recommendation_reqs_in_db = []
+recommendation_responses_in_db = []
 for user in users_in_db:
     # pick a random genre for the user's request
     random_genre = choice(genres_in_db) 
@@ -93,12 +94,8 @@ for user in users_in_db:
     else:
         book_author = book_info['authors'][0]
 
-    # sets the categories if available
-    ############ add handling here for category to match form/genre input
-    # if 'categories' not in book_info:
-    #     book_genre = "Oops! This book doesn't appear to have specified genre(s). Bookbot suggests you consider Googling it to make sure this recommendation fits your desired genre."
-    # else:
-    #     book_genre = book_info['categories'][0]
+    ############ add handling here later for category to match form/genre input
+
 
 
 
