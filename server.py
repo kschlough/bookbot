@@ -132,10 +132,24 @@ def new_recommendation():
 
 @app.route('/recent-requests')
 def show_recents():
-    # parse through the genres.json and put into a list
-    
+    # pull from db - not from seed because database will only get seeded first time, want up-to-date info    
+    rec_response_titles_in_db = []
+    rec_response_authors_in_db = []
+    rec_responses_in_db = {}
+    rec_responses = RecommendationResponse.query.all()
+
+    for resp in rec_responses:
+        # rec_response_titles_in_db.append(resp.book_title)
+        
+        item = RecommendationResponse.query.filter(RecommendationResponse.resp_id == resp.resp_id).first()
+        rec_responses_in_db[resp.book_title] = item.book_author
+        
+        # rec_response_authors_in_db.append(item.book_author)
+
     return render_template('recents.html',
-                            recommendation_responses_in_db = recommendation_responses_in_db)
+                            rec_responses_in_db = rec_responses_in_db)
+                            # rec_response_titles_in_db = rec_response_titles_in_db,
+                            # rec_response_authors_in_db = rec_response_authors_in_db)
 
 
 if __name__ == '__main__':

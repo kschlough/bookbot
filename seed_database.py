@@ -109,7 +109,8 @@ for user in users_in_db:
     # get use id from username
     user = User.query.filter(User.name == user.name).first() 
 
-    rec_response = crud.create_recommendation_response(book_title, book_author, user.user_id)
+    # get rec_id from rec requests
+    rec_response = crud.create_recommendation_response(book_title, book_author, user.user_id, rec_request.rec_id)
     recommendation_responses_in_db.append(rec_response)
 
     db.session.add(rec_response)

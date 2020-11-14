@@ -10,12 +10,18 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+#book-image {
+    position: relative;
+    float: left;
+}
+
 .form-control {
     font-family: 'Raleway', sans-serif;
 }
 
 .instructions {
     font-family: 'Raleway', sans-serif;
+    display: inline-block;
 }
 
 div {
@@ -26,3 +32,4 @@ div {
 button {
     font-family: 'Raleway', sans-serif;
 }
+

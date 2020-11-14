@@ -35,12 +35,13 @@ def create_recommendation(setting, genre_id, user_id):
     return recommendation
 
 
-def create_recommendation_response(book_title, book_author, user_id):
+def create_recommendation_response(book_title, book_author, user_id, rec_id):
     """Create and return a new recommendation response."""
 
     recommendation_response = RecommendationResponse(book_title=book_title,
                                                     book_author=book_author,
-                                                    user_id=user_id)
+                                                    user_id=user_id,
+                                                    rec_id = rec_id)
 
     db.session.add(recommendation_response)
     db.session.commit()
