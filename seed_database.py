@@ -114,19 +114,3 @@ for user in users_in_db:
 
     db.session.add(rec_response)
     db.session.commit()
-
-    ############ add handling here later for category to match form/genre input
-
-
-
-
-####################################
-# changed to above doing in one loop - commenting out below for now
-# seed the recommendation responses table - 15 responses
-# for rec in recommendation_reqs_in_db:
-#     genre_id = rec.genre_id
-#     kw = rec.setting
-
-#     # crud.create_recommendation_response(#title, author, user_id)
-#     crud.create_recommendation_response(rec.user_id)
-

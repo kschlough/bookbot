@@ -7,9 +7,16 @@
             <h2>View all of Bookbot's recent recommendations</h2>
 
             <!-- display 3 books per row -->
-
+            <div class="response books">
+                <label for="response-books">Bookbot's Recent Recommendations:</label>
             <!-- loops through recommendation_responses_in_db -->
+                {% for book in recommendation_responses_in_db %} 
+                <div>{{ book }}</div>
+                {% endfor %}
             <!-- 'user' received a recommendation for 'book' by 'author' from Bookbot -->
+
+            </div>
+            
 
         </div>
     </div>

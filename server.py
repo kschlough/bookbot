@@ -2,7 +2,7 @@
 
 from flask import Flask, render_template, request, jsonify, redirect
 from model import connect_to_db, db
-from model import User, Genre, RecommendationRequest, RecommendationResponse
+from model import User,Genre, RecommendationRequest, RecommendationResponse
 import requests # python library - outgoing request
 import random # for random choice of book from API response
 import os
@@ -22,7 +22,6 @@ app.jinja_env.undefined = StrictUndefined
 def form_fillout():
     """Fill out the form to request a recommendation."""
     
-    # parse through the genres.json and put into a list
     with open('data/genres.json') as f:
         rec_genres = json.load(f)
 
@@ -30,7 +29,6 @@ def form_fillout():
     genres = rec_genres['items']
     for genre in genres:
         genres_list.append(genre)
-
 
     return render_template('form.html',
                             genres_list = genres_list)
@@ -134,7 +132,10 @@ def new_recommendation():
 
 @app.route('/recent-requests')
 def show_recents():
-    return render_template('recents.html')
+    # parse through the genres.json and put into a list
+    
+    return render_template('recents.html',
+                            recommendation_responses_in_db = recommendation_responses_in_db)
 
 
 if __name__ == '__main__':
