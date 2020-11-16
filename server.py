@@ -65,17 +65,22 @@ def new_recommendation():
     results = response.json()
     num_results = int(len(results['items']))
 
-    # while loop until genre matches user's selected genre
     index = random.choice(range(0, num_results)) 
-    if results['items'][index]['volumeInfo']['categories'][0] != genre:
-        while results['items'][index]['volumeInfo']['categories'][0] != genre:
-            # get another random book
-            index = random.choice(range(0, num_results)) 
 
     # out of the loop with a match:
     book = results['items'][index]
     book_info = book['volumeInfo']
     book_title = book_info['title']
+
+    # this check prevents 'categories' keyerror
+    if 'categories' not in book_info:
+        # get another random book - 
+        index = random.choice(range(0, num_results))
+    # conditional check & while loop until genre matches user's selected genre
+    elif book_info['categories'][0] != genre:
+        while results['items'][index]['volumeInfo']['categories'][0] != genre:
+            # get another random book
+            index = random.choice(range(0, num_results))
 
     # sets maturity
     if book_info['maturityRating'] == "MATURE":
