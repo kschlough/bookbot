@@ -8,15 +8,13 @@ function returnHome() {
 $('#resubmit-button').on('click', returnHome);
 
 
-// custom form fillout validation message
-function invalidName() {
-    alert("Please fill out your name");
+// test - single page for form submit
+// listen for form button click
+function submitForm() {
+    
 };
 
-$('#search-name').on('invalid', invalidName);
-
-
-
+$('#submit-form-button').on('click', submitForm);
 
 
 
