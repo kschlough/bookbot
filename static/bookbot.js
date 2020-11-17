@@ -8,13 +8,13 @@ function returnHome() {
 $('#resubmit-button').on('click', returnHome);
 
 
-// test - single page for form submit
-// listen for form button click
-function submitForm() {
+// // test - single page for form submit
+// // listen for form button click
+// function submitForm() {
     
-};
+// };
 
-$('#submit-form-button').on('click', submitForm);
+// $('#submit-form-button').on('click', submitForm);
 
 
 
