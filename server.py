@@ -73,11 +73,11 @@ def new_recommendation():
     book_title = book_info['title']
 
     # this check prevents 'categories' keyerror
-    if 'categories' not in book_info:
+    while 'categories' not in book_info:
         # get another random book - 
         index = random.choice(range(0, num_results))
     # conditional check & while loop until genre matches user's selected genre
-    elif book_info['categories'][0] != genre:
+    if book_info['categories'][0] != genre:
         while results['items'][index]['volumeInfo']['categories'][0] != genre:
             # get another random book
             index = random.choice(range(0, num_results))
