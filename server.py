@@ -122,6 +122,18 @@ def new_recommendation():
 
     image_url = book_info['imageLinks']['thumbnail']
 
+
+    # add crud function for the response from bookbot:
+    # book title set on line 73
+    # book author set on line 101
+    # user_id set on line 53
+    # sets rec_id from request submitted on line 58:
+    rec_id = rec_request.rec_id
+    rec_response = crud.create_recommendation_response(book_title, book_author, user_id, rec_id):
+    db.session.add(rec_response)
+    db.session.commit()
+    
+    
     return render_template('recommendation.html', 
                             username = username,
                             genre = genre,
