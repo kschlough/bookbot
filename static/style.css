@@ -10,18 +10,10 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+/* display for returned recommendation formatting */
 #book-image {
     position: relative;
     float: left;
-}
-
-.form-control {
-    font-family: 'Raleway', sans-serif;
-}
-
-.instructions {
-    font-family: 'Raleway', sans-serif;
-    display: inline-block;
 }
 
 div {
@@ -29,7 +21,44 @@ div {
 
 }
 
+.form-control {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* button/instruction formatting */
+.instructions {
+    font-family: 'Raleway', sans-serif;
+    display: inline-block;
+}
+
 button {
     font-family: 'Raleway', sans-serif;
 }
+
+/* navbar formatting */
+li {
+    list-style-type: none;
+    margin: 0 2vw;
+    /* vh = viewport height, like width */
+    font-size: 2vh;
+}
+
+ul {
+    /* default - flex-direction: row */
+    display: flex;
+}
+
+#navbar {
+    text-decoration: none;
+    /* vw = viewport width */
+    width: 100vw;
+    padding: 20px;
+    background-color: pink;
+}
+
+#navbar:hover {
+    background-color: blueviolet;
+}
+
+
 

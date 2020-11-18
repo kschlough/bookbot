@@ -129,7 +129,7 @@ def new_recommendation():
     # user_id set on line 53
     # sets rec_id from request submitted on line 58:
     rec_id = rec_request.rec_id
-    rec_response = crud.create_recommendation_response(book_title, book_author, user_id, rec_id):
+    rec_response = crud.create_recommendation_response(book_title, book_author, user_id, rec_id)
     db.session.add(rec_response)
     db.session.commit()
     
