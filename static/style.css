@@ -6,11 +6,13 @@ title {
 
 h2 {
     font-family: 'Raleway', sans-serif;
+    color: #6B9080;
 }
 
 body {
     font-family: 'Raleway', sans-serif;
     background-color: #F9FFFC;
+    
 }
 
 /* display for returned recommendation formatting */
@@ -26,16 +28,20 @@ div {
 
 .form-control {
     font-family: 'Raleway', sans-serif;
+    color: black;
 }
 
 /* button/instruction formatting */
 .instructions {
     font-family: 'Raleway', sans-serif;
     display: inline-block;
+    
 }
 
 button {
     font-family: 'Raleway', sans-serif;
+    color: black;
+    background-color: #CBE3DB;
 }
 
 /* navbar formatting */
@@ -60,17 +66,19 @@ ul {
 }
 
 #navbar:hover {
-    background-color: #E4F4EE;
+    background-color: #A4C3B2;
 }
 
 a {
     /* background-color: */
-    color: black;
+    color: #F9FFFC;
 }
 
 a:hover {
-    color: #6B9080;
+    color: #F9FFFC;
+    text-decoration-color: #6B9080;
 }
+
 
 
 
