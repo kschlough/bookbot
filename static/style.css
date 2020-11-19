@@ -1,3 +1,5 @@
+/* colour sheme: https://www.schemecolor.com/cambridge-shades.php */
+
 title {
     font-family: 'Raleway', sans-serif;
 }
@@ -8,6 +10,7 @@ h2 {
 
 body {
     font-family: 'Raleway', sans-serif;
+    background-color: #F9FFFC;
 }
 
 /* display for returned recommendation formatting */
@@ -40,7 +43,7 @@ li {
     list-style-type: none;
     margin: 0 2vw;
     /* vh = viewport height, like width */
-    font-size: 2vh;
+    font-size: 3vh;
 }
 
 ul {
@@ -53,11 +56,20 @@ ul {
     /* vw = viewport width */
     width: 100vw;
     padding: 20px;
-    background-color: pink;
+    background-color: #6B9080;
 }
 
 #navbar:hover {
-    background-color: blueviolet;
+    background-color: #E4F4EE;
+}
+
+a {
+    /* background-color: */
+    color: black;
+}
+
+a:hover {
+    color: #6B9080;
 }
 
 
