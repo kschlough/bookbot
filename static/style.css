@@ -21,6 +21,12 @@ body {
     float: left;
 }
 
+#title-author {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 div {
     padding: 10px;
 
@@ -78,6 +84,8 @@ a:hover {
     color: #F9FFFC;
     text-decoration-color: #6B9080;
 }
+
+
 
 
 

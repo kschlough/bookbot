@@ -13,15 +13,29 @@
         <div class="col">
             <h2>Hi {{ username.title() }}! Bookbot has generated your recommendation below.</h2>
             <p>Here is what you're looking for: A book from the {{ genre.title() }} genre, with the keyword "{{ keyword }}."</p>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col">
+            <div id="book-image">
+                <img src = {{ image_url }}>
+            </div>
+
+            <div id="title-author">
+                <h3>{{ book_title }}</h3>
+                <h4>{{ book_author }}</h4>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+           
             <div id="book-recommendation">
-                <div id="book-image">
-                    <img src = {{ image_url }}>
-                </div>
-
+    
                 <div id="book-info">
-                    <h3>{{ book_title }}</h3>
-                    <h4>{{ book_author }}</h4>
                     <p>Description: {{ description }}</p>
                     <p>Genre: {{ book_genre }}</p>
                     <p>Page count: {{ page_count }}</p>
@@ -37,7 +51,9 @@
             </div>
 
         </div>
+    
     </div>
+    
 </div>
 
 <script src="http://code.jquery.com/jquery.js"></script>

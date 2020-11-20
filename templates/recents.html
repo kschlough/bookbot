@@ -8,8 +8,8 @@
 
             <!-- display 3 books per row -->
             <div class="response books">
-                <label for="response-books">Bookbot's Recent Recommendations:</label>
-            <!-- loops through recommendation_responses_in_db -->
+            <!-- loops through recommendation_responses_in_db --> 
+                
                 {% for book in rec_responses_in_db %} 
                 <div class="book">{{ book }} by {{ rec_responses_in_db[book] }}</div>
                 {% endfor %}
