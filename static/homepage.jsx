@@ -3,3 +3,9 @@ function Homepage() {
         <h1>Welcome to Bookbot</h1>
     )
 };
+
+
+ReactDOM.render(
+    <Homepage />,
+    document.querySelector('#root')
+);
