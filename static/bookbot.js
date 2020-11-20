@@ -5,7 +5,14 @@ function returnHome() {
     window.location.href = "/";
 };
 
-$('#resubmit-button').on('click', returnHome);
+$('#home').on('click', returnHome);
+
+// return to resubmit form again
+function resubmitForm() {
+    window.location.href = "/";
+};
+
+$('#resubmit-button').on('click', resubmitForm);
 
 
 // // test - single page for form submit
