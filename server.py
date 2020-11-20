@@ -16,14 +16,14 @@ from secrets import KEY
 app = Flask(__name__)
 app.jinja_env.undefined = StrictUndefined
 
-@app.route('/home')
+@app.route('/')
 def homepage():
     """Homepage."""
 
     return render_template('homepage.html')
 
 
-@app.route('/')
+@app.route('/form')
 def form_fillout():
     """Fill out the form to request a recommendation."""
     

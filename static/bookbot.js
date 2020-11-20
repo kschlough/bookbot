@@ -9,7 +9,7 @@ $('#home').on('click', returnHome);
 
 // return to resubmit form again
 function resubmitForm() {
-    window.location.href = "/";
+    window.location.href = "/form";
 };
 
 $('#resubmit-button').on('click', resubmitForm);
