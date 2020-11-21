@@ -1,4 +1,4 @@
-function allRecommendations() {
+function AllRecommendations() {
     return (
         <React.Fragment>
             <div className="container">
@@ -25,6 +25,6 @@ function allRecommendations() {
 };
 
 ReactDOM.render(
-    <allRecommendations />,
+    <AllRecommendations />,
     document.querySelector('#root')
 );

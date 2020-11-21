@@ -1,7 +1,7 @@
 // test - single page for form submit
 // // listen for form button click
 
-function submitForm() {
+function SubmitForm() {
     return (
         <React.Fragment>
             <div className="container">
@@ -51,6 +51,6 @@ function submitForm() {
 
 
 ReactDOM.render(
-    <submitForm />,
+    <SubmitForm />,
     document.querySelector('#root')
 );
