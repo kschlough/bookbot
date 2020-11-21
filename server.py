@@ -35,7 +35,7 @@ def form_fillout():
     for genre in genres:
         genres_list.append(genre)
 
-    return render_template('form.html',
+    return render_template('recommendation_react.html',
                             genres_list = genres_list)
 
 
@@ -157,7 +157,7 @@ def show_recents():
         
         # rec_response_authors_in_db.append(item.book_author)
 
-    return render_template('recents.html',
+    return render_template('all_recs.html',
                             rec_responses_in_db = rec_responses_in_db)
                             # rec_response_titles_in_db = rec_response_titles_in_db,
                             # rec_response_authors_in_db = rec_response_authors_in_db)
