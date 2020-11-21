@@ -34,7 +34,7 @@ function submitForm() {
                                 <option value="" disabled="disabled">Please select an option</option>
                                 {/* add loop here over genres in db */}
                                 for (genre of genres_list) {
-                                    <option value="{{ genre }}">{{ genre }}</option>
+                                    <option value="{ genre }">{ genre }</option>
                                 }
                                 </select>
                     
