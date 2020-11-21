@@ -1,17 +1,17 @@
 function allRecommendations() {
     return (
         <React.Fragment>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
+            <div className="container">
+                <div className="row">
+                    <div className="col">
                         <h2>View all of Bookbot's recent recommendations</h2>
 
                         {/* display 3 books per row */}
-                        <div class="response books">
+                        <div className="response books">
                             <label for="response-books">Bookbot's Recent Recommendations:</label>
                             {/* loops through recommendation_responses_in_db */}
                             for (book of rec_responses_in_db) {
-                                <div class="book">{ book } by { rec_responses_in_db[book] }</div>
+                                <div className="book">{ book } by { rec_responses_in_db[book] }</div>
                             } 
                             {/* 'user' received a recommendation for 'book' by 'author' from Bookbot */}
 

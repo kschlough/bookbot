@@ -127,7 +127,7 @@ def new_recommendation():
 
     image_url = book_info['imageLinks']['thumbnail']
 
-    return render_template('recommendation.html', 
+    return render_template('rec_response.html', 
                             username = username,
                             genre = genre,
                             keyword = keyword,
