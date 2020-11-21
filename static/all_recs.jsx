@@ -1,6 +1,4 @@
-// test - single page for form submit
-// // listen for form button click
-function submitForm() {
+function allRecommendations() {
     return (
         <React.Fragment>
             
@@ -10,7 +8,6 @@ function submitForm() {
 };
 
 ReactDOM.render(
-    <submitForm />,
+    <allRecommendations />,
     document.querySelector('#root')
 );
-
