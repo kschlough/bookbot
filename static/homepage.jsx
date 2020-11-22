@@ -5,13 +5,13 @@ function Homepage() {
             <h2>Would you like to:</h2>
             <ul>
                 <li>
-                    <p>Request a recommendation</p>
+                    <a href='/form'>Request a recommendation</a>
                 </li>
                 
                 <p>or:</p>
                 
                 <li>
-                    <p>View all of Bookbot's previous recommendations</p>
+                    <a href='/recent-requests'>View all of Bookbot's previous recommendations</a>
                 </li>
             </ul>
             
