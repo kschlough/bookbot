@@ -21,7 +21,4 @@ function Homepage() {
 };
 
 
-ReactDOM.render(
-    <Homepage />,
-    document.querySelector('#root')
-);
+ReactDOM.render(<Homepage />, document.querySelector('#root'));

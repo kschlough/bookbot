@@ -29,6 +29,7 @@ def form_fillout():
 
     return render_template('recommendation_react.html')
 
+
 @app.route('/api/genres')
 def genres():
     """API route to access a list of all prep-populated genres."""
@@ -43,6 +44,12 @@ def genres():
 
         return jsonify({'genres': genres_list})
 
+
+@app.route('/api/recommendation')
+def recommendation():
+    """API route to access the returned recommendation response."""
+
+    
 
 @app.route('/recommendation-request', methods=['POST'])
 def new_recommendation():
