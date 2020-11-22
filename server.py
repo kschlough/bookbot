@@ -26,17 +26,22 @@ def homepage():
 @app.route('/form')
 def form_fillout():
     """Fill out the form to request a recommendation."""
-    
+
+    return render_template('recommendation_react.html')
+
+@app.route('/api/genres')
+def genres():
+    """API route to access a list of all prep-populated genres."""
+
     with open('data/genres.json') as f:
         rec_genres = json.load(f)
+        
+        genres_list = []
+        genres = rec_genres['items']
+        for genre in genres:
+            genres_list.append(genre)
 
-    genres_list = []
-    genres = rec_genres['items']
-    for genre in genres:
-        genres_list.append(genre)
-
-    return render_template('recommendation_react.html',
-                            genres_list = genres_list)
+        return jsonify({'genres': genres_list})
 
 
 @app.route('/recommendation-request', methods=['POST'])
