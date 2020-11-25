@@ -13,9 +13,9 @@
 
     <script src="/static/bookbot.js"></script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link href="<link rel="preconnect" href="https://fonts.gstatic.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap" rel="stylesheet">
     
     <link rel="icon" href="data:,">
 
@@ -26,13 +26,15 @@
     <nav id="navbar">
       <ul>
         <li>
+          <i class="fas fa-book"></i>
+
           <a href='/'>Bookbot</a>
         </li>
         <li>
           <a href='recent-requests'>Recent Recommendations</a>
         </li>
       </ul>
-    </nav>>
+    </nav>
     {% block content %}{% endblock %}
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

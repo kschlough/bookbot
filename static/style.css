@@ -1,16 +1,16 @@
 /* colour sheme: https://www.schemecolor.com/cambridge-shades.php */
 
 title {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Karla', sans-serif;
 }
 
 h2 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Karla', sans-serif;
     color: #6B9080;
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Karla', sans-serif;
     background-color: #F9FFFC;
     
 }
@@ -33,19 +33,19 @@ div {
 }
 
 .form-control {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Karla', sans-serif;
     color: black;
 }
 
 /* button/instruction formatting */
 .instructions {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Karla', sans-serif;
     display: inline-block;
     
 }
 
 button {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Karla', sans-serif;
     color: black;
     background-color: #CBE3DB;
 }
