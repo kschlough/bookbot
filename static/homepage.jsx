@@ -4,13 +4,13 @@ function Homepage() {
             <h1>Welcome to Bookbot</h1>
             <h2>Would you like to:</h2>
             <ul>
-                <li>
+                <li className = "homepage">
                     <a href='/form'>Request a recommendation</a>
                 </li>
                 
                 <p>or:</p>
                 
-                <li>
+                <li className = "homepage">
                     <a href='/recent-requests'>View all of Bookbot's previous recommendations</a>
                 </li>
             </ul>

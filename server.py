@@ -24,7 +24,7 @@ def homepage():
 
     return render_template('home.html')
 
-@app.route('/request')
+@app.route('/form')
 def form_fillout():
     """Fill out the form to request a recommendation."""
     
