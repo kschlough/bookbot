@@ -22,6 +22,7 @@ app.jinja_env.undefined = StrictUndefined
 def homepage():
     """Bookbot homepage."""
 
+    return render_template('home.html')
 
 @app.route('/request')
 def form_fillout():
