@@ -69,19 +69,26 @@ ul {
     width: 100vw;
     padding: 20px;
     background-color: #6B9080;
+    color: #F9FFFC;
+
 }
 
 #navbar:hover {
     background-color: #A4C3B2;
 }
 
-a {
+/* a {
     /* background-color: */
-    color: #F9FFFC;
-}
+    /* color: #F9FFFC;
+} */ 
 
 a:hover {
     color: #F9FFFC;
+    text-decoration-color: #6B9080;
+}
+
+.homepage {
+    color: #6B9080;
     text-decoration-color: #6B9080;
 }
 
