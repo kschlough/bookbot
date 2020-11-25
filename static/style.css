@@ -77,12 +77,8 @@ ul {
     background-color: #A4C3B2;
 }
 
-/* a {
-    /* background-color: */
-    /* color: #F9FFFC;
-} */ 
 
-a:hover {
+.navlink:hover {
     color: #F9FFFC;
     text-decoration-color: #6B9080;
 }
@@ -90,6 +86,16 @@ a:hover {
 .homepage {
     color: #6B9080;
     text-decoration-color: #6B9080;
+}
+
+.navlink {
+    text-decoration: none;
+    color: #F9FFFC;
+
+}
+
+a {
+    color: inherit;
 }
 
 
