@@ -1,5 +1,12 @@
 function SubmitForm(props) {
-    const { genres } = props;
+    const [genres, setGenres] = React.useState([]);
+    React.useEffect(() => {
+        fetch('/api/genres').
+        then((response) => response.json()).
+        then((genres) => setGenres(genres.genres));
+        }, [])
+
+    
     return (
         <React.Fragment>
             <div className="container">
@@ -21,6 +28,25 @@ function SubmitForm(props) {
 
                             <div className="instructions">Please input your requested search criteria below and Bookbot will find your match!</div>
 
+                            <div className="form-group">
+                                <label htmlFor="request-genre">Genre</label>
+                                <option></option>
+                                <select name="genre"
+                                id="search-genre"
+                                className="form-control"
+                                required>
+
+
+                                <option value="" disabled="disabled">Please select an option</option>
+                                {genres.map((data,id)=>{
+                                    return <option key={id}>{data}</option>
+                                })}
+                            
+                                </select>
+                                
+                            </div>
+
+                        
                         </form>
                         
                     </div>
