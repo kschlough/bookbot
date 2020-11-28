@@ -109,16 +109,21 @@ a:hover {
 
 }
 
-#root {
+#homepage {
     margin: auto;
-    width: 50%;
-    padding: 10px;
+    justify-content: center;
+    width: 100vw;
+    height: 100vw;
+    padding: 20px;
+    background-image: url('/static/unsplash-book.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.homepage {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
+#welcome {
+    margin: auot;
+    justify-content: center;
+
 }
 
 
