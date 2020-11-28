@@ -4,6 +4,11 @@ title {
     font-family: 'Karla', sans-serif;
 }
 
+h1 {
+    font-family: 'Karla', sans-serif;
+    color: 6B9080;
+}
+
 h2 {
     font-family: 'Karla', sans-serif;
     color: #6B9080;
@@ -34,7 +39,7 @@ div {
 
 .form-control {
     font-family: 'Karla', sans-serif;
-    color: black;
+    color: #6B9080;
 }
 
 /* button/instruction formatting */
@@ -46,7 +51,6 @@ div {
 
 button {
     font-family: 'Karla', sans-serif;
-    color: black;
     background-color: #CBE3DB;
 }
 
@@ -69,20 +73,39 @@ ul {
     width: 100vw;
     padding: 20px;
     background-color: #6B9080;
+    color: #F9FFFC;
+
 }
 
 #navbar:hover {
     background-color: #A4C3B2;
 }
 
-a {
-    /* background-color: */
+
+.navlink:hover {
     color: #F9FFFC;
+    text-decoration-color: #6B9080;
+}
+
+.homepage {
+    color: #6B9080;
+    text-decoration-color: #6B9080;
+}
+
+.navlink {
+    text-decoration: none;
+    color: #F9FFFC;
+
+}
+
+a {
+    color: inherit;
 }
 
 a:hover {
-    color: #F9FFFC;
+    color: inherit;
     text-decoration-color: #6B9080;
+
 }
 
 

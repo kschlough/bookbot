@@ -17,8 +17,14 @@ app = Flask(__name__)
 app.jinja_env.undefined = StrictUndefined
 
 
-# this is the homepage, for now it will have the form
+# this is the new homepage
 @app.route('/')
+def homepage():
+    """Bookbot homepage."""
+
+    return render_template('home.html')
+
+@app.route('/form')
 def form_fillout():
     """Fill out the form to request a recommendation."""
     

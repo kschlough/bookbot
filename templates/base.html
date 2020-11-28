@@ -19,6 +19,13 @@
     
     <link rel="icon" href="data:,">
 
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script
+    crossorigin
+    src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"
+    ></script>
+
     {% block head %}{% endblock %}
   </head>
   <body>
@@ -26,12 +33,10 @@
     <nav id="navbar">
       <ul>
         <li>
-          <i class="fas fa-book"></i>
-
-          <a href='/'>Bookbot</a>
+          <a className = "navlink" href='/'>Bookbot</a>
         </li>
         <li>
-          <a href='recent-requests'>Recent Recommendations</a>
+          <a className = "navlink" href='recent-requests'>Recent Recommendations</a>
         </li>
       </ul>
     </nav>
