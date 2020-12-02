@@ -57,7 +57,18 @@ body {
 
 button {
     font-family: 'Karla', sans-serif;
-    background-color: #CBE3DB;
+    background-color: #6B9080;
+}
+
+#submit-form-button {
+    border-radius: 15px;
+    border-color: none;
+    border-style: none;
+    color: #F9FFFC;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* navbar */

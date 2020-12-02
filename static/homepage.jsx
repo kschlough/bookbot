@@ -13,13 +13,13 @@ function Homepage() {
                         <ul id="homepage-options">
                             <li>
                                 <i class="fas fa-book"></i>
-                                <a href='/form'>Request a recommendation</a>
+                                <a href='/form'> Request a recommendation</a>
                             </li>
                         
                         
                             <li>
                                 <i class="fas fa-bookmark"></i>
-                                <a href='/recent-requests'>View all of Bookbot's previous recommendations</a>
+                                <a href='/recent-requests'> View all of Bookbot's previous recommendations</a>
                             </li>
                         </ul>
                     </div>
