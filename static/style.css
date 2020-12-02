@@ -6,7 +6,7 @@ title {
 
 h1 {
     font-family: 'Karla', sans-serif;
-    color: 6B9080;
+    color: #6B9080;
 }
 
 h2 {
@@ -29,13 +29,18 @@ body {
 
 #title-author {
     position: relative;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
 }
 
-div {
-    padding: 10px;
-
+#book-info {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
 }
 
 .form-control {
@@ -43,7 +48,7 @@ div {
     color: #6B9080;
 }
 
-/* button/instruction formatting */
+/* button/instruction */
 .instructions {
     font-family: 'Karla', sans-serif;
     display: inline-block;
@@ -55,7 +60,7 @@ button {
     background-color: #CBE3DB;
 }
 
-/* navbar formatting */
+/* navbar */
 li {
     list-style-type: none;
     margin: 0 2vw;
@@ -63,7 +68,7 @@ li {
     font-size: 3vh;
 }
 
-ul {
+#nav-options {
     /* default - flex-direction: row */
     display: flex;
 }
@@ -88,11 +93,6 @@ ul {
     text-decoration-color: #6B9080;
 }
 
-.homepage {
-    color: #6B9080;
-    text-decoration-color: #6B9080;
-}
-
 .navlink {
     text-decoration: none;
     color: #F9FFFC;
@@ -109,22 +109,51 @@ a:hover {
 
 }
 
-#homepage {
-    margin: auto;
-    justify-content: center;
-    width: 100vw;
-    height: 100vw;
-    padding: 20px;
+
+
+/* homepage */
+
+.homepage {
+    color: #6B9080;
+    text-align: center;
+    text-decoration-color: #6B9080;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+}
+
+.welcome {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+}
+
+#homepage-img {
     background-image: url('/static/unsplash-book.jpg');
-    background-size: contain;
     background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
 }
 
-#welcome {
-    margin: auot;
-    justify-content: center;
-
+.homepage-options {
+    display: inline-flex;
+    padding-top: 50px;
 }
+
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+
 
 
 
