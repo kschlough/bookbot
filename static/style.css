@@ -163,6 +163,14 @@ a:hover {
 }
 
 
+/* footer */
+footer {
+    display: flex;
+    position: relative;
+    justify-content: end;
+}
+
+
 
 
 

@@ -12,13 +12,13 @@ function Homepage() {
                         <h2 id="choice">Would you like to:</h2>
                         <ul id="homepage-options">
                             <li>
-                                <i class="fas fa-book"></i>
+                                <i className="fas fa-book"></i>
                                 <a href='/form'> Request a recommendation</a>
                             </li>
                         
                         
                             <li>
-                                <i class="fas fa-bookmark"></i>
+                                <i className="fas fa-bookmark"></i>
                                 <a href='/recent-requests'> View all of Bookbot's previous recommendations</a>
                             </li>
                         </ul>
