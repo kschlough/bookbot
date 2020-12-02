@@ -1,12 +1,12 @@
 function Homepage() {
     return (
         <React.Fragment>
-            <div className = "homepage">
 
-            <div className="homepage" id="homepage-img"></div>
+            <div className="row" id="image-row">
+                <div className="homepage" id="homepage-img"></div>
+                <div className = "homepage">
 
-            
-                <div className="row">
+                
                     <div className="col">
                         <h1 id="welcome">Welcome to Bookbot!</h1>
                         <h2 id="choice">Would you like to:</h2>
