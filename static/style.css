@@ -131,15 +131,11 @@ a:hover {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);   
+    transform: translate(-50%, -100%);   
 }
 
-.welcome {
-    position: relative;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);   
+#choice {
+    padding-bottom: 20px;
 }
 
 #homepage-img {
@@ -164,10 +160,21 @@ a:hover {
 
 
 /* footer */
-footer {
-    display: flex;
-    position: relative;
-    justify-content: end;
+div#footer {
+    background-color: #F9FFFC;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#footer-links {
+    display: inline;
+
 }
 
 
