@@ -11,7 +11,6 @@ body {
 
 }
 
-
 button {
     border-radius: 15px;
     border-color: none;
@@ -24,4 +23,65 @@ button {
     font-family: 'Karla', sans-serif;
     background-color: #6B9080;
 }
+
+li {
+    list-style: none;
+
+}
+
+/* ############################################################ */
+/* homepage */
+
+#homepage-img {
+    background-image: url('/static/unsplash-book.jpg');
+}
+
+#homepage-container {
+    justify-content: center;
+    width: 100vw;
+    padding: 0 0 0 0;
+    margin-right: 0;
+    margin-left: 0;
+    text-align: center;
+
+}
+
+.homepage-text {
+    
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+
+/* ############################################################ */
+/* navbar */
+#nav-div {
+    text-decoration: none;
+    width: 100vw;
+    height: auto;
+    background-color: #6B9080;
+    color: #F9FFFC;
+
+}
+
+#nav-options {
+    padding: 0, 0, 0, 0;
+    margin-bottom: 0;
+}
+
+#navbar:hover {
+    background-color: #A4C3B2;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+    text-decoration-color: inherit;
+
+}
+
 
