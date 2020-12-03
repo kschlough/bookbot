@@ -15,7 +15,13 @@ function invalidName() {
 
 $('#search-name').on('invalid', invalidName);
 
+// get homepage options on hover
+function Options() {
+    var bookbotMenu = $('<div className="homepage-text">Text</div>');
+    document.body.appendChild(bookbotMenu);
+}
 
+$('#root').on('click', Options);
 
 
 

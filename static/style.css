@@ -1,6 +1,5 @@
 /* colour sheme: https://www.schemecolor.com/cambridge-shades.php */
 
-
 /* ############################################################ */
 /* base styling */
 body {
@@ -25,38 +24,38 @@ button {
 
 li {
     list-style: none;
+    padding-right: 10px;
+    padding-left: 10px;
 
 }
+
 
 /* ############################################################ */
 /* homepage */
-#homepage-img {
-    background-image: url('/static/unsplash-book.jpg');
-    
-}
-
-#homepage-container {
-    justify-content: center;
-    width: 100vw;
+.view {
     height: 100vh;
-    padding: 0 0 0 0;
-    margin-right: 0;
-    margin-left: 0;
-    margin-bottom: 0;
-    text-align: center;
+    width: 100vw;
+    background-image: url('/static/unsplash-book.jpg'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center center;
+  }
+  
+  @media (max-width: 740px) {
+    .view {
+      height: 100vh;
+    }
+  }
 
-}
+  .view:hover {
+    opacity: 0.5;
+  }
 
+  #homepage-text {
+      
+  }
 
-.homepage-text {
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    
-}
-
-
-/* ############################################################ */
+  /* ############################################################ */
 /* navbar */
 #nav-div {
     text-decoration: none;
@@ -68,14 +67,10 @@ li {
 }
 
 #nav-options {
-    padding: 0, 0, 0, 0;
+    padding: 20px;
     margin-bottom: 0;
     display: flex;
-    padding: 20px;
-}
-
-#navbar:hover {
-    background-color: #A4C3B2;
+    
 }
 
 a {
@@ -94,6 +89,7 @@ a:hover {
 #footer-links {
     display: flex;
     justify-content: center;
+    
 }
 
 #footer {
@@ -102,5 +98,6 @@ a:hover {
     padding: 0, 0, 0, 0;
     background-color: #E4F4EE;
 }
+
 
 
