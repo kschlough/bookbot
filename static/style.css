@@ -129,6 +129,9 @@ a:hover {
     text-align: center;
     text-decoration-color: #6B9080;
     position: fixed;
+    padding-top: 20px;
+    width: 100%;
+    height: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -100%);   
@@ -138,14 +141,6 @@ a:hover {
     padding-bottom: 20px;
 }
 
-#homepage-img {
-    background-image: url('/static/unsplash-book.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%, 70%;
-    opacity: 0.5;
-       
-}
 
 #homepage-options {
     display: inline;
@@ -157,9 +152,17 @@ a:hover {
     padding-bottom: 20px;
 }
 
+#homepage-img {
+    background-image: url('/static/unsplash-book.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+       
+}
+
 
 /* footer */
-div#footer {
+#footer {
     background-color: #F9FFFC;
     position: fixed;
     bottom: 0;
