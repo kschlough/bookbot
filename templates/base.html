@@ -29,37 +29,38 @@
     {% block head %}{% endblock %}
   </head>
   <body>
-    <div id="nav-div">
-      <nav id="navbar">
-        <ul id="nav-options">
-          <li>
-            <i class="fas fa-book-reader"></i>
-            <a className = "navlink" href='/'>Bookbot</a>
-          </li>
-          <li>
-            <a className = "navlink" href='recent-requests'>Recent Recommendations</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+      <div id="nav-div">
+        <nav id="navbar">
+          <ul id="nav-options">
+            <li>
+              <i class="fas fa-book-reader"></i>
+              <a className = "navlink" href='/'>Bookbot</a>
+            </li>
+            <li>
+              <a className = "navlink" href='recent-requests'>Recent Recommendations</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-
-    <div id="footer">
-      <ul id="footer-links">
-        <li>
-          <a href="https://www.linkedin.com/in/kathryn-schlough/"><i class="fab fa-linkedin"></i></a>
-        </li>
-        
-        <li>
-          <a href="https://github.com/kschlough"><i class="fab fa-github-square"></i></a>
-        </li>
-      </ul>
-
-    </div>
 
     {% block content %}{% endblock %}
 
-    
+    <div class="container">
+      <div id="footer">
+        <ul id="footer-links">
+          <li>
+            <a href="https://www.linkedin.com/in/kathryn-schlough/"><i class="fab fa-linkedin"></i></a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/kschlough"><i class="fab fa-github-square"></i></a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

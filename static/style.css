@@ -1,12 +1,27 @@
 /* colour sheme: https://www.schemecolor.com/cambridge-shades.php */
 
 
+/* ############################################################ */
+/* base styling */
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-color: #F9FFFC;
+    color: #6B9080; 
+
+}
 
 
-
-
-
-
-
-
+button {
+    border-radius: 15px;
+    border-color: none;
+    border-style: none;
+    color: #F9FFFC;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Karla', sans-serif;
+    background-color: #6B9080;
+}
 
