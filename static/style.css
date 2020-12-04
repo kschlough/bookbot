@@ -29,8 +29,12 @@ li {
 
 }
 
-container {
+.container {
     padding: 15px;
+}
+
+h2 {
+
 }
 
 
@@ -50,14 +54,14 @@ container {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -90%);
+    transform: translate(-50%, -80%);
 
   }
 
 
 .col-homepage {
     text-align: center;
-    background-color: white;
+    background-color: #F9FFFC;
     border-radius: 15px;
     padding: 15px;
 
@@ -100,6 +104,8 @@ a:hover {
 #footer-links {
     display: flex;
     justify-content: center;
+    padding-top: 10px;
+    margin-top: 10px;
     
 }
 
