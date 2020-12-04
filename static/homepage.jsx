@@ -8,7 +8,7 @@ function Homepage() {
             
                     <div className="row-homepage py-5">
                     
-                    <div className="col-homepage text-center">
+                    <div className="col-homepage">
                         <h1>Welcome to Bookbot!</h1>
                         <h2>Would you like to:</h2>
 
