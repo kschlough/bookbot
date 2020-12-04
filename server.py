@@ -85,10 +85,9 @@ def new_recommendation():
         
     # conditional check & while loop until genre matches user's selected genre
     if 'categories' in book_info:
-        if book_info['categories'][0] != genre:
-            while book_info['categories'][0] != genre:
-                # get another random book
-                index = random.choice(range(0, num_results))
+        while book_info['categories'][0] != genre:
+            # get another random book
+            index = random.choice(range(0, num_results))
     else:
         index = random.choice(range(0, num_results))
 
