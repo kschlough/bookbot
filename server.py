@@ -84,10 +84,14 @@ def new_recommendation():
         index = random.choice(range(0, num_results))
         
     # conditional check & while loop until genre matches user's selected genre
-    if book_info['categories'][0] != genre:
-        while book_info['categories'][0] != genre:
-            # get another random book
-            index = random.choice(range(0, num_results))
+    if 'categories' in book_info:
+        if book_info['categories'][0] != genre:
+            while book_info['categories'][0] != genre:
+                # get another random book
+                index = random.choice(range(0, num_results))
+    else:
+        index = random.choice(range(0, num_results))
+
 
     # sets maturity
     if book_info['maturityRating'] == "MATURE":
