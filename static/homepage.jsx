@@ -2,6 +2,7 @@ function Homepage() {
     return (
         <React.Fragment>
 
+        <div className="wrapper">
             <div className="view"></div>
             <div id="homepage-text">
             <div className="container">
@@ -10,7 +11,7 @@ function Homepage() {
                     
                     <div className="col-homepage">
                         <h1>Welcome to Bookbot!</h1>
-                        <h2>Would you like to:</h2>
+                        <h2 id="choice">Would you like to:</h2>
 
                         <ul id="homepage-options">
                             <h5>
@@ -35,7 +36,7 @@ function Homepage() {
             
                 </div>
              
-        
+        </div>
         </React.Fragment>
     );
 };
