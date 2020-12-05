@@ -25,7 +25,6 @@ li {
     list-style: none;
     padding-right: 10px;
     padding-left: 10px;
-
 }
 
 .container {
@@ -60,8 +59,7 @@ h5 {
     background-size: cover; 
     background-position: center center;
     opacity: 0.75;
-
-  }
+}
 
 #homepage-text {
     position: relative;
@@ -71,8 +69,7 @@ h5 {
     width: 50vw;
     transform: translate(-50%, -750%);
     text-align: center;
-
-  }
+}
 
 #homepage-options {
     text-align: left;
@@ -88,8 +85,7 @@ h5 {
     border-radius: 15px;
     padding: 15px; 
     opacity: 0.9;
-
-  }
+}
 
 
 /* ############################################################ */
@@ -100,14 +96,12 @@ h5 {
     height: auto;
     background-color: #6B9080;
     color: #F9FFFC;
-
 }
 
 #nav-options {
     padding: 20px;
     margin-bottom: 0;
-    display: flex;
-    
+    display: flex;   
 }
 
 a {
@@ -119,7 +113,6 @@ a:hover {
     text-decoration: none;
     font-weight: bolder;
     font-size-adjust: 10px;
-
 }
 
 
@@ -142,10 +135,6 @@ a:hover {
 
 /* ############################################################ */
 /* recommendation page */
-#book-recommendation {
-    
-}
-
 #img-and-title {
     text-align: center;
     background-color: #E4F4EE;
@@ -155,3 +144,7 @@ a:hover {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+
+/* ############################################################ */
+/* recents/all recs page */
