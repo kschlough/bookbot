@@ -142,10 +142,6 @@ a:hover {
 
 /* ############################################################ */
 /* recommendation page */
-#book-recommendation {
-    
-}
-
 #img-and-title {
     text-align: center;
     background-color: #E4F4EE;
@@ -154,4 +150,12 @@ a:hover {
     padding-bottom: 20px;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+
+/* ############################################################ */
+/* all recs page */
+.book {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
