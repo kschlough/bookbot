@@ -80,7 +80,6 @@ testpath==0.4.4
 tornado==6.0.4
 traitlets==4.3.3
 Twisted==17.9.0
-ufw==0.36
 urllib3==1.25.10
 virtualenv==15.1.0
 wcwidth==0.2.5
